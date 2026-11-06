@@ -11,5 +11,21 @@ export function validateData(d:any){
  for(const [s,p]of Object.entries(d.assignments)){if(!ids.has(s)||!pids.has(p as string))throw Error('Invalid point assignment')}
  for(const [k,v]of Object.entries(d.images)){if(!/^[\w-]+$/.test(k)||typeof v!=='string'||!/^\/(images\/[\w-]+\.(jpg|png)|api\/images\/[\w-]+)$/.test(v))throw Error('Invalid image')}
  for(const s of d.stores)if(s.images.some((k:string)=>!d.images[k]))throw Error('Missing image');
+ if(d.schemaVersion===2){
+  if(!Array.isArray(d.buildings)||!Array.isArray(d.canteens)||d.buildings.length>300||d.canteens.length>300)throw Error('Invalid campus structure');
+  const bids=new Set(),cids=new Set();
+  const position=(x:any)=>[x.x,x.y].every(v=>typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=100);
+  for(const b of d.buildings){
+   if(!string(b.id,100)||!/^[\w-]+$/.test(b.id)||bids.has(b.id)||!string(b.zh)||!b.zh.trim()||!string(b.en)||!string(b.code,40)||!position(b)||typeof b.verified!=='boolean')throw Error('Invalid building');
+   if(b.polygon!==undefined&&(!Array.isArray(b.polygon)||b.polygon.length<3||b.polygon.length>40||!b.polygon.every((p:any)=>Array.isArray(p)&&p.length===2&&p.every((v:any)=>typeof v==='number'&&Number.isFinite(v)&&Math.abs(v)<5000))))throw Error('Invalid building shape');
+   bids.add(b.id);
+  }
+  for(const c of d.canteens){
+   if(!string(c.id,100)||!/^[\w-]+$/.test(c.id)||cids.has(c.id)||!string(c.zh)||!c.zh.trim()||!string(c.en)||!string(c.buildingId,100)||(c.buildingId&&!bids.has(c.buildingId))||!position(c)||typeof c.verified!=='boolean'||!string(c.floor||'',200)||!string(c.floorEn||'',200))throw Error('Invalid canteen');
+   cids.add(c.id);
+  }
+  for(const s of d.stores){if(!string(s.canteenId,100)||(s.canteenId&&!cids.has(s.canteenId))||!Array.isArray(s.notesEn)||!s.notesEn.every((x:any)=>string(x,3000)))throw Error('Invalid restaurant hierarchy');}
+  for(const x of d.dishes)for(const key of ['categoryEn','noteEn','priceEn'])if(x[key]!==undefined&&!string(x[key],3000))throw Error('Invalid translation');
+ }
  if(JSON.stringify(d).length>1700000)throw Error('Dataset too large');return d;
 }
