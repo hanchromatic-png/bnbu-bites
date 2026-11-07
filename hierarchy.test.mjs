@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {normalizeData,removeEntity,locationOf,localized} from './public/domain.js';
+import {normalizeData,removeEntity,locationOf,localized,matchesDiet} from './public/domain.js';
 import {validateData} from './security.ts';
 import {createApp,passwordHash} from './server.mjs';
 const seed=JSON.parse(readFileSync(new URL('./seed.json',import.meta.url))),buildings=JSON.parse(readFileSync(new URL('./public/building-defaults.json',import.meta.url)));
@@ -31,4 +31,17 @@ test('hierarchy edits, restaurant movement and deletion survive draft/publish/re
  removeEntity(data,'stores',data.stores[0].id);assert.equal((await call('/api/admin/draft',{data,revision:1})).status,200);assert.equal((await call('/api/admin/publish',{revision:2})).status,200);
  app.close();app=createApp({dataDir:dir,origin,email,hash});const saved=(await (await call('/api/data')).json()).data;assert.ok(!saved.stores.some(s=>s.id==='x0'));assert.ok(!saved.dishes.some(d=>d.store==='x0'));assert.ok(saved.canteens.some(c=>c.id==='c-test'));
  }finally{app.close();rmSync(dir,{recursive:true,force:true})}
+});
+
+test('meal style and dietary filters combine without weakening allergen restrictions',()=>{
+ const p={base:'noodles',diet:'any',allergens:[],strict:false,spice:false};
+ const noodle={zh:'番茄面',base:'noodles',clues:['wheat']};
+ assert.equal(matchesDiet(noodle,p),true);
+ assert.equal(matchesDiet({...noodle,base:'rice'},p),false);
+ assert.equal(matchesDiet(noodle,{...p,allergens:['wheat']}),false);
+ assert.equal(matchesDiet(noodle,{...p,allergens:['milk'],strict:true}),false);
+ assert.equal(matchesDiet({...noodle,zh:'牛肉面'},{...p,diet:'noBeef'}),false);
+ assert.equal(matchesDiet({...noodle,zh:'猪肉面'},{...p,diet:'noPork'}),false);
+ assert.equal(matchesDiet({...noodle,zh:'麻辣面'},{...p,spice:true}),false);
+ assert.equal(matchesDiet(noodle,{...p,diet:'halal'}),false);
 });

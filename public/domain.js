@@ -43,6 +43,7 @@ export function localized(obj, lang, field='name') {
   return value || '';
 }
 export function matchesDiet(d,p) {
+  if(p.base && p.base!=='any' && !(p.base==='light'?(d.base==='light'||/沙拉|烤蔬碗/.test(d.zh)):d.base===p.base)) return false;
   if(p.allergens?.length && (p.strict || (d.clues||[]).some(c=>p.allergens.includes(c)))) return false;
   if(p.diet==='halal') return false;
   if(p.diet==='plant'&&!d.plant) return false;
