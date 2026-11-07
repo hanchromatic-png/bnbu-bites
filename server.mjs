@@ -10,7 +10,7 @@ const defaultBuildings=JSON.parse(readFileSync(new URL('./public/building-defaul
 const root=import.meta.dirname;
 const sha=s=>createHash('sha256').update(s).digest('hex');
 export const passwordHash=(password,salt=randomBytes(16).toString('hex'))=>`${salt}:${scryptSync(password,salt,64).toString('hex')}`;
-export function createApp({dataDir=process.env.DATA_DIR||resolve(root,'data'),origin=process.env.APP_ORIGIN,email=process.env.ADMIN_EMAIL,hash=process.env.ADMIN_PASSWORD_HASH}={}){
+export function createApp({resetCatalog=false,dataDir=process.env.DATA_DIR||resolve(root,'data'),origin=process.env.APP_ORIGIN,email=process.env.ADMIN_EMAIL,hash=process.env.ADMIN_PASSWORD_HASH}={}){
  if(!origin||!email||!hash)throw Error('APP_ORIGIN, ADMIN_EMAIL and ADMIN_PASSWORD_HASH are required');
  const url=new URL(origin);origin=url.origin;
  if(url.protocol!=='https:'&&!['localhost','127.0.0.1'].includes(url.hostname))throw Error('Production requires an HTTPS APP_ORIGIN');
@@ -24,6 +24,21 @@ export function createApp({dataDir=process.env.DATA_DIR||resolve(root,'data'),or
  const json=(x,status=200,headers={})=>Response.json(x,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...headers}});
  const fail=(message,status=400)=>{throw Object.assign(Error(message),{status})};
  const snapshot=(id)=>{const row=db.prepare('SELECT * FROM state WHERE id=?').get(id);const fallback=row||(id==='draft'?db.prepare("SELECT * FROM state WHERE id='published'").get():null);return {data:normalizeData(fallback?JSON.parse(fallback.body):seed,defaultBuildings),revision:row?.revision||0}};
+ // One-time, user-requested catalog reset. Keep recoverable snapshots outside public files.
+ if(resetCatalog&&!db.prepare('SELECT id FROM audit WHERE id=?').get('catalog-reset-20261107')){
+  const saved={published:snapshot('published'),draft:snapshot('draft')};
+  mkdirSync(resolve(dataDir,'backups'),{recursive:true});
+  writeFileSync(resolve(dataDir,'backups','catalog-before-reset-20261107.json'),JSON.stringify(saved),{mode:0o600});
+  db.exec('BEGIN IMMEDIATE');try{
+   for(const id of ['published','draft']){
+    const old=saved[id],d=old.data;d.stores=[];d.dishes=[];d.assignments={};d.points=[];
+    d.canteens=[{id:'hall-phase2',zh:'二期食堂（湖边，待定位）',en:'Phase 2 Dining Hall (lakeside, location pending)',buildingId:'',x:50,y:50,floor:'独立食堂，具体位置待核对',floorEn:'Standalone dining hall; exact location pending',verified:false}];
+    d.updated=new Date().toISOString();validateData(d);
+    db.prepare('INSERT INTO state VALUES(?,?,?,?) ON CONFLICT(id) DO UPDATE SET body=excluded.body,revision=excluded.revision,updated=excluded.updated').run(id,JSON.stringify(d),old.revision+1,d.updated);
+   }
+   db.prepare('INSERT INTO audit VALUES(?,?,?)').run('catalog-reset-20261107','Archive and clear unverified catalog at user request',new Date().toISOString());db.exec('COMMIT');
+  }catch(e){db.exec('ROLLBACK');throw e;}
+ }
  const token=r=>sha((r.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>x.startsWith('bnbu_session='))?.slice(13)||'');
  const logged=r=>!!db.prepare('SELECT token FROM sessions WHERE token=? AND expires>? AND credential=?').get(token(r),Date.now(),credential);
  async function bytes(r,max){if(Number(r.headers.get('content-length'))>max)fail('文件过大',413);if(!r.body)return Buffer.alloc(0);const reader=r.body.getReader(),chunks=[];let n=0;while(true){const {value,done}=await reader.read();if(done)break;n+=value.length;if(n>max){await reader.cancel();fail('文件过大',413)}chunks.push(value)}return Buffer.concat(chunks)}
@@ -76,6 +91,6 @@ export function createApp({dataDir=process.env.DATA_DIR||resolve(root,'data'),or
  return {handle,close:()=>db.close()};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
- const app=createApp();const server=createServer(async(req,res)=>{try{let size=0;const chunks=[];for await(const c of req){size+=c.length;if(size>3100000){res.writeHead(413);res.end();return}chunks.push(c)}const r=new Request(new URL(req.url,process.env.APP_ORIGIN),{method:req.method,headers:req.headers,...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(chunks)})});const out=await app.handle(r);res.writeHead(out.status,Object.fromEntries(out.headers));res.end(Buffer.from(await out.arrayBuffer()))}catch{res.writeHead(500);res.end('Internal error')}});
+ const app=createApp({resetCatalog:true});const server=createServer(async(req,res)=>{try{let size=0;const chunks=[];for await(const c of req){size+=c.length;if(size>3100000){res.writeHead(413);res.end();return}chunks.push(c)}const r=new Request(new URL(req.url,process.env.APP_ORIGIN),{method:req.method,headers:req.headers,...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(chunks)})});const out=await app.handle(r);res.writeHead(out.status,Object.fromEntries(out.headers));res.end(Buffer.from(await out.arrayBuffer()))}catch{res.writeHead(500);res.end('Internal error')}});
  server.requestTimeout=30000;server.headersTimeout=15000;server.listen(Number(process.env.PORT||3000),'0.0.0.0',()=>console.log('BNBU Bites ready'));process.on('SIGTERM',()=>server.close(()=>{app.close();process.exit(0)}));
 }
