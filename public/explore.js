@@ -5,7 +5,7 @@ const sheet=mobileSheet($('diningSheet'),$('sheetHandle'),expanded=>expanded?t('
 let data,buildingId='',canteenId='',selected='',query='',limit=40;
 const blankPrefs=()=>({country:'',base:'any',diet:'any',spice:false,allergens:[],strict:true});
 let prefs=blankPrefs();try{const old=JSON.parse(localStorage.getItem('bnbu-preferences-v6'));if(old&&Array.isArray(old.allergens))prefs={...prefs,...old}}catch{}
-const map=new CampusMap($('campusMap'),{select:id=>{buildingId=id;canteenId='';selected='';render();}});
+const map=new CampusMap($('campusMap'),{selectHall:id=>{canteenId=id;buildingId='';selected='';render();sheet.expand();},select:id=>{buildingId=id;canteenId='';selected='';render();}});
 const score=d=>prefs.base==='light'?Number(/沙拉|烤蔬碗/.test(d.zh)):Number(prefs.base!=='any'&&d.base===prefs.base);
 const filtered=()=>prefs.base!=='any'||prefs.diet!=='any'||prefs.spice||prefs.allergens.length;
 const dishes=s=>data.dishes.filter(d=>d.store===s.id&&matchesDiet(d,prefs)&&(!query||[s.zh,s.en,locationText(s),d.zh,d.en,d.category,d.categoryEn].join(' ').toLowerCase().includes(query))).sort((a,b)=>score(b)-score(a));

@@ -39,6 +39,17 @@ export function createApp({resetCatalog=false,dataDir=process.env.DATA_DIR||reso
    db.prepare('INSERT INTO audit VALUES(?,?,?)').run('catalog-reset-20261107','Archive and clear unverified catalog at user request',new Date().toISOString());db.exec('COMMIT');
   }catch(e){db.exec('ROLLBACK');throw e;}
  }
+ // User-confirmed lakeside location on the supplied campus reference image.
+ if(resetCatalog&&!db.prepare('SELECT id FROM audit WHERE id=?').get('phase2-location-20261107')){
+  db.exec('BEGIN IMMEDIATE');try{
+   for(const id of ['published','draft']){
+    const old=snapshot(id),d=old.data,c=d.canteens.find(c=>c.id==='hall-phase2');
+    if(c){Object.assign(c,{zh:'二期食堂',en:'Phase 2 Dining Hall',buildingId:'',x:12.5,y:8,verified:true,floor:'湖边独立建筑，D1–D6 宿舍区北侧',floorEn:'Standalone lakeside building, north of D1–D6'});
+     d.updated=new Date().toISOString();validateData(d);db.prepare('INSERT INTO state VALUES(?,?,?,?) ON CONFLICT(id) DO UPDATE SET body=excluded.body,revision=excluded.revision,updated=excluded.updated').run(id,JSON.stringify(d),old.revision+1,d.updated);}
+   }
+   db.prepare('INSERT INTO audit VALUES(?,?,?)').run('phase2-location-20261107','Place standalone lakeside hall from user reference',new Date().toISOString());db.exec('COMMIT');
+  }catch(e){db.exec('ROLLBACK');throw e;}
+ }
  const token=r=>sha((r.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>x.startsWith('bnbu_session='))?.slice(13)||'');
  const logged=r=>!!db.prepare('SELECT token FROM sessions WHERE token=? AND expires>? AND credential=?').get(token(r),Date.now(),credential);
  async function bytes(r,max){if(Number(r.headers.get('content-length'))>max)fail('文件过大',413);if(!r.body)return Buffer.alloc(0);const reader=r.body.getReader(),chunks=[];let n=0;while(true){const {value,done}=await reader.read();if(done)break;n+=value.length;if(n>max){await reader.cancel();fail('文件过大',413)}chunks.push(value)}return Buffer.concat(chunks)}

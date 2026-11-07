@@ -50,7 +50,7 @@ test('requested catalog reset archives both snapshots and runs only once',async(
  const dir=mkdtempSync(join(tmpdir(),'bites-reset-'));const opts={dataDir:dir,origin:'https://example.com',email:'test@example.com',hash:passwordHash('test-only-password'),resetCatalog:true};
  let app=createApp(opts);try{
  const d=(await (await app.handle(new Request('https://example.com/api/data'))).json()).data;
- assert.equal(d.stores.length,0);assert.equal(d.dishes.length,0);assert.equal(d.buildings.length,36);assert.equal(d.canteens[0].buildingId,'');assert.equal(d.canteens[0].verified,false);
+ assert.equal(d.stores.length,0);assert.equal(d.dishes.length,0);assert.equal(d.buildings.length,36);assert.equal(d.canteens[0].buildingId,'');assert.equal(d.canteens[0].verified,true);assert.equal(d.canteens[0].x,12.5);assert.equal(d.canteens[0].y,8);
  const backup=readFileSync(join(dir,'backups','catalog-before-reset-20261107.json'),'utf8');assert.equal(JSON.parse(backup).published.data.stores.length,48);
  app.close();app=createApp(opts);assert.equal(readFileSync(join(dir,'backups','catalog-before-reset-20261107.json'),'utf8'),backup);
  }finally{app.close();rmSync(dir,{recursive:true,force:true});}
