@@ -50,6 +50,21 @@ export function createApp({resetCatalog=false,dataDir=process.env.DATA_DIR||reso
    db.prepare('INSERT INTO audit VALUES(?,?,?)').run('phase2-location-20261107','Place standalone lakeside hall from user reference',new Date().toISOString());db.exec('COMMIT');
   }catch(e){db.exec('ROLLBACK');throw e;}
  }
+ // Add the independent hall identified by the user east of the main lake.
+ // Coordinates are schematic, traced from the reference; the name is still pending.
+ if(resetCatalog&&!db.prepare('SELECT id FROM audit WHERE id=?').get('east-lake-hall-20261108')){
+  db.exec('BEGIN IMMEDIATE');try{
+   for(const id of ['published','draft']){
+    const old=snapshot(id),d=old.data;
+    if(!d.canteens.some(c=>c.id==='hall-east-lake')){
+     d.canteens.push({id:'hall-east-lake',zh:'食堂（名称待确认）',en:'Dining hall (name pending)',buildingId:'',x:88,y:54,verified:true,floor:'主湖东南侧，演艺厅旁；按参考图示意定位',floorEn:'Southeast of the main lake, beside the theatre; approximate reference-map location'});
+     d.updated=new Date().toISOString();validateData(d);
+     db.prepare('INSERT INTO state VALUES(?,?,?,?) ON CONFLICT(id) DO UPDATE SET body=excluded.body,revision=excluded.revision,updated=excluded.updated').run(id,JSON.stringify(d),old.revision+1,d.updated);
+    }
+   }
+   db.prepare('INSERT INTO audit VALUES(?,?,?)').run('east-lake-hall-20261108','Add user-identified dining hall beside theatre; name pending',new Date().toISOString());db.exec('COMMIT');
+  }catch(e){db.exec('ROLLBACK');throw e;}
+ }
  const token=r=>sha((r.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>x.startsWith('bnbu_session='))?.slice(13)||'');
  const logged=r=>!!db.prepare('SELECT token FROM sessions WHERE token=? AND expires>? AND credential=?').get(token(r),Date.now(),credential);
  async function bytes(r,max){if(Number(r.headers.get('content-length'))>max)fail('文件过大',413);if(!r.body)return Buffer.alloc(0);const reader=r.body.getReader(),chunks=[];let n=0;while(true){const {value,done}=await reader.read();if(done)break;n+=value.length;if(n>max){await reader.cancel();fail('文件过大',413)}chunks.push(value)}return Buffer.concat(chunks)}
