@@ -14,3 +14,5 @@
 .browse input,.browse select{font-size:16px}
 }
 @media(prefers-reduced-motion:reduce){.browse .sidebar{transition:none}}
+
+.restaurant-pin{cursor:pointer}.restaurant-pin path{fill:#256d57;stroke:white;stroke-width:2}.restaurant-pin:hover path,.restaurant-pin:focus path{fill:#be652b;stroke-width:3}.restaurant-pin .pin-text{font-size:13px;fill:#163c30;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.is-placing .map-stage{cursor:crosshair}.location-editor{margin-top:24px;border-top:1px solid var(--line);padding-top:20px}.location-editor details{margin:12px 0}.location-editor summary{cursor:pointer;margin-bottom:12px}.location-editor [aria-pressed="true"]{background:#256d57;color:white}

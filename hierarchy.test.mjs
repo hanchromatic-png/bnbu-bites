@@ -55,3 +55,28 @@ test('requested catalog reset archives both snapshots and runs only once',async(
  app.close();app=createApp(opts);assert.equal(readFileSync(join(dir,'backups','catalog-before-reset-20261107.json'),'utf8'),backup);
  }finally{app.close();rmSync(dir,{recursive:true,force:true});}
 });
+
+test('restaurant pins persist through publish/restart, reject invalid coordinates, and can be removed independently of halls',async()=>{
+ const dir=mkdtempSync(join(tmpdir(),'bites-pins-')),origin='https://bites.example',email='test@example.com',password='test-only-password',opts={dataDir:dir,origin,email,hash:passwordHash(password)};let app=createApp(opts),cookie='';
+ const call=async(path,payload)=>app.handle(new Request(origin+path,{method:payload?'POST':'GET',headers:{origin,'content-type':'application/json',cookie},...(payload?{body:JSON.stringify(payload)}:{})}));
+ try{
+ cookie=(await call('/api/admin/login',{email,password})).headers.get('set-cookie').split(';')[0];
+ let {data,revision}=await (await call('/api/admin/draft')).json();const s=data.stores.find(s=>s.id==='x2');s.canteenId='';s.location={x:0,y:100,verified:true,note:'湖边入口',noteEn:'Lakeside entrance'};
+ assert.equal((await call('/api/admin/draft',{data,revision})).status,200);
+ assert.equal((await (await call('/api/data')).json()).data.stores.find(s=>s.id==='x2').location,undefined);
+ assert.equal((await call('/api/admin/publish',{revision:1})).status,200);
+ app.close();app=createApp(opts);
+ const saved=(await (await call('/api/data')).json()).data;
+ assert.deepEqual(saved.stores.find(s=>s.id==='x2').location,s.location);
+ assert.deepEqual(locationOf(saved,saved.stores.find(s=>s.id==='x2')).point,s.location);
+ for(const bad of [{x:-1,y:1,verified:true},{x:1,y:101,verified:true},{x:'20',y:1,verified:true},{x:1,y:2,verified:'true'},{x:1,y:2,verified:true,note:'x'.repeat(201)}]){
+  data.stores.find(s=>s.id==='x2').location=bad;assert.equal((await call('/api/admin/draft',{data,revision:1})).status,400);
+ }
+ s.location={x:30,y:40,verified:false};assert.equal(locationOf(data,s).point,null);
+ s.location=null;assert.equal((await call('/api/admin/draft',{data,revision:1})).status,200);
+ assert.equal((await call('/api/admin/publish',{revision:2})).status,200);
+ const removed=(await (await call('/api/data')).json()).data;assert.equal(removed.stores.find(s=>s.id==='x2').location,null);assert.equal(removed.dishes.length,saved.dishes.length);
+ const inHall=data.stores.find(s=>s.id==='v24_0');data.canteens.find(c=>c.id===inHall.canteenId).verified=true;
+ const hallPoint=locationOf(data,inHall).point;inHall.location={x:12,y:34,verified:true};assert.deepEqual(locationOf(data,inHall).point,inHall.location);inHall.location=null;assert.deepEqual(locationOf(data,inHall).point,hallPoint);
+ }finally{app.close();rmSync(dir,{recursive:true,force:true})}
+});

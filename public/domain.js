@@ -27,7 +27,7 @@ export function normalizeData(input, defaults = []) {
 export function locationOf(d, store) {
   const canteen=d.canteens.find(c=>c.id===store.canteenId);
   const building=d.buildings.find(b=>b.id===canteen?.buildingId);
-  return {canteen,building};
+  return {canteen,building,point:store.location?.verified?store.location:(canteen?.verified?(building||canteen):null)};
 }
 export function removeEntity(d, type, id) {
   if(type==='buildings') {d.buildings=d.buildings.filter(b=>b.id!==id);d.canteens.forEach(c=>{if(c.buildingId===id){c.buildingId='';c.verified=false;}});}

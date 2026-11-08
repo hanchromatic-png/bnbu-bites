@@ -9,5 +9,5 @@ export function mobileSheet(host,handle,label){
  handle.onpointermove=e=>{if(!start)return;const delta=start.y-e.clientY;if(Math.abs(delta)>6)moved=true;if(!moved)return;host.classList.add('sheet-dragging');const full=host.parentElement.clientHeight;host.style.setProperty('--sheet-height',Math.max(full*.45,Math.min(full*.96,start.height+delta))+'px');};
  const end=e=>{if(!start)return;const delta=start.y-e.clientY;start=null;if(moved)set(delta>0);};
  handle.onpointerup=end;handle.onpointercancel=()=>{start=null;set(expanded);};
- media.addEventListener('change',()=>set(expanded));paint();return {refresh:paint,expand:()=>{if(media.matches)set(true);}};
+ media.addEventListener('change',()=>set(expanded));paint();return {refresh:paint,collapse:()=>set(false),expand:()=>{if(media.matches)set(true);}};
 }

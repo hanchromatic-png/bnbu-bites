@@ -24,7 +24,7 @@ export function validateData(d:any){
    if(!string(c.id,100)||!/^[\w-]+$/.test(c.id)||cids.has(c.id)||!string(c.zh)||!c.zh.trim()||!string(c.en)||!string(c.buildingId,100)||(c.buildingId&&!bids.has(c.buildingId))||!position(c)||typeof c.verified!=='boolean'||!string(c.floor||'',200)||!string(c.floorEn||'',200))throw Error('Invalid canteen');
    cids.add(c.id);
   }
-  for(const s of d.stores){if(!string(s.canteenId,100)||(s.canteenId&&!cids.has(s.canteenId))||!Array.isArray(s.notesEn)||!s.notesEn.every((x:any)=>string(x,3000)))throw Error('Invalid restaurant hierarchy');}
+  for(const s of d.stores){if(s.location!=null&&(!position(s.location)||typeof s.location.verified!=='boolean'||!string(s.location.note||'',200)||!string(s.location.noteEn||'',200)))throw Error('Invalid restaurant location');if(!string(s.canteenId,100)||(s.canteenId&&!cids.has(s.canteenId))||!Array.isArray(s.notesEn)||!s.notesEn.every((x:any)=>string(x,3000)))throw Error('Invalid restaurant hierarchy');}
   for(const x of d.dishes)for(const key of ['categoryEn','noteEn','priceEn'])if(x[key]!==undefined&&!string(x[key],3000))throw Error('Invalid translation');
  }
  if(JSON.stringify(d).length>1700000)throw Error('Dataset too large');return d;
