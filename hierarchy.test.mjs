@@ -80,3 +80,12 @@ test('restaurant pins persist through publish/restart, reject invalid coordinate
  const hallPoint=locationOf(data,inHall).point;inHall.location={x:12,y:34,verified:true};assert.deepEqual(locationOf(data,inHall).point,inHall.location);inHall.location=null;assert.deepEqual(locationOf(data,inHall).point,hallPoint);
  }finally{app.close();rmSync(dir,{recursive:true,force:true})}
 });
+
+test('geographic restaurant positions remain separate from schematic coordinates',async()=>{
+ const {hasGeo,coordinateFor}=await import('./public/geo-domain.js');
+ assert.equal(hasGeo({x:20,y:30}),false);assert.equal(coordinateFor({x:20,y:30}),null);
+ assert.deepEqual(coordinateFor({code:'D1'},[{code:'D1',lng:113.51,lat:22.36}]),[113.51,22.36]);
+ const d=normalizeData(seed,buildings),s=d.stores[0];
+ s.location={x:50,y:50,lng:113.514,lat:22.354,verified:true,note:'',noteEn:''};validateData(d);assert.deepEqual(locationOf(d,s).point,s.location);
+ for(const bad of [{lng:181,lat:22},{lng:113,lat:90},{lng:'113',lat:22},{lng:113},{lng:null,lat:22}]){s.location={x:50,y:50,verified:true,...bad};assert.throws(()=>validateData(d),/location/);}
+});
