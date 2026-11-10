@@ -1,5 +1,5 @@
 import {CampusMap,t,name,lang} from './common.js';
-import {hasGeo,coordinateFor,hallReferences} from './geo-domain.js';
+import {hasGeo,coordinateFor} from './geo-domain.js';
 const HOME={center:[113.514,22.3568],zoom:15.7,pitch:45,bearing:-25};
 let protocolReady=false;
 function style(){return {version:8,sources:{campus:{type:'vector',tiles:['campus://14/{x}/{y}'],minzoom:14,maxzoom:14,bounds:[113.5025239,22.3406022,113.5542409,22.388223],attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="/map-sources.html">Map sources</a>'}},layers:[
@@ -15,16 +15,16 @@ function style(){return {version:8,sources:{campus:{type:'vector',tiles:['campus
  ],light:{anchor:'viewport',color:'#fff3dd',intensity:0.35,position:[1.5,180,45]}};}
 export class GeoCampusMap {
  constructor(host,options={}){
-  this.host=host;this.options=options;this.markers=[];this.labels=[];this.placing=false;this.dead=false;this.mode='geo';
+  this.host=host;this.options=options;this.markers=[];this.labels=[];this.pois=[];this.placing=false;this.dead=false;this.mode='geo';
   host.classList.add('geo-campus');host.innerHTML='<div class="geo-surface"></div><button type="button" class="map-mode"></button><div class="geo-caption" role="status"></div>';
   this.surface=host.querySelector('.geo-surface');this.modeButton=host.querySelector('.map-mode');this.caption=host.querySelector('.geo-caption');this.modeButton.onclick=()=>this.switchMode(this.mode==='geo'?'legacy':'geo');this.refreshChrome();
-  this.init();
+  this.poiReady=fetch('/map-data/campus-poi.json').then(r=>{if(!r.ok)throw Error('POI unavailable');return r.json()}).then(p=>{this.pois=p;if(!this.dead)this.paint()}).catch(()=>{});this.init();
  }
  async init(){
   try{
    if(!globalThis.maplibregl?.Map)throw Error('Map renderer unavailable');
    if(!protocolReady){maplibregl.addProtocol('campus',(params,callback)=>{const controller=new AbortController();const parts=params.url.match(/^campus:\/\/14\/(\d+)\/(\d+)$/);if(!parts){callback(Error('Invalid campus tile'));return {cancel(){}};}const x=Number(parts[1]),y=Number(parts[2]);if(![13357,13358].includes(x)||![7147,7148].includes(y)){callback(null,new ArrayBuffer(0));return {cancel(){}};}fetch(`/map-data/14-${x}-${y}.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Map tile unavailable');return r.json()}).then(d=>callback(null,Uint8Array.from(atob(d.data),c=>c.charCodeAt(0)).buffer)).catch(e=>{if(e.name!=='AbortError')callback(e)});return {cancel:()=>controller.abort()};});protocolReady=true;}
-   this.gl=new maplibregl.Map({container:this.surface,style:style(),...HOME,minZoom:14,maxZoom:20,maxBounds:[[113.505,22.347],[113.524,22.366]],attributionControl:{compact:true},renderWorldCopies:false});
+   this.gl=new maplibregl.Map({container:this.surface,style:style(),...HOME,minZoom:14,maxZoom:20,maxBounds:[[113.502,22.340],[113.555,22.389]],attributionControl:{compact:true},renderWorldCopies:false});
    this.gl.on('error',()=>{if(!this.dead&&this.mode==='geo')this.caption.textContent=t('地图加载异常，可切换示意图。','Map could not fully load. Switch to the diagram.');});
    this.gl.on('click',e=>{if(this.placing&&this.options.place)this.options.place(50,50,{lng:e.lngLat.lng,lat:e.lngLat.lat});});
    this.gl.on('zoomend',()=>this.layoutLabels());this.gl.on('moveend',()=>this.layoutLabels());
@@ -44,16 +44,20 @@ export class GeoCampusMap {
  set placeAnywhere(value){this.placing=value;if(this.legacy)this.legacy.placeAnywhere=value;this.host.classList.toggle('is-placing',value);if(this.gl)this.gl.getCanvas().style.cursor=value?'crosshair':'';}
  get placeAnywhere(){return this.placing;}
  update(data,selected='',editPoint=null){this.data=data;this.selected=selected;this.editPoint=editPoint;this.refreshChrome();if(this.mode==='legacy'){const clean={...data,stores:data.stores.filter(s=>!hasGeo(s.location))};this.legacy.update(clean,selected,hasGeo(editPoint)?null:editPoint);}else this.paint();}
- point(p){return coordinateFor(p,this.labels)||(p?.id&&hallReferences[p.id]?[hallReferences[p.id].lng,hallReferences[p.id].lat]:null);}
- focus(p){const c=this.point(p);if(c&&this.gl){this.switchMode('geo');this.gl.easeTo({center:c,zoom:18,pitch:45,duration:600});}else if(p){this.switchMode('legacy');this.legacy.focus(p);}}
+ point(p){return coordinateFor(p,this.labels);}
+ focus(p){const c=this.point(p);if(c&&this.gl&&!this.unavailable){this.switchMode('geo');this.gl.easeTo({center:c,zoom:18,pitch:45,duration:600});}else if(p){this.switchMode('legacy');this.legacy.focus(p);}}
  marker(coords,label,kind,action,short=label){const el=document.createElement(action?'button':'span');if(action)el.type='button';el.className='geo-label '+kind;el.textContent=short;el.title=label;el.setAttribute('aria-label',label);if(action)el.onclick=e=>{e.stopPropagation();if(this.placing)this.options.place?.(50,50,{lng:coords[0],lat:coords[1]});else action();};const marker=new maplibregl.Marker({element:el,anchor:kind==='restaurant'?'bottom':'center'}).setLngLat(coords).addTo(this.gl);this.markers.push({marker,el,kind,label,short});}
  paint(){if(!this.data||!this.gl||this.dead||this.mode!=='geo')return;for(const m of this.markers)m.marker.remove();this.markers=[];
-  for(const label of this.labels){const b=this.data.buildings.find(b=>b.code?.toUpperCase()===label.code.toUpperCase());this.marker([label.lng,label.lat],lang==='en'?label.en:label.zh,'building'+(b?.id===this.selected?' active':''),b?()=>this.options.select?.(b.id):null,label.code);}
-  for(const c of this.data.canteens){if(c.buildingId||!c.verified)continue;const coords=this.point(c);if(coords)this.marker(coords,name(c)+(hasGeo(c)?'':t(' · 参考位置',' · Reference location')),'hall',()=>this.options.selectHall?.(c.id));}
+  for(const b of this.data.buildings){const coords=this.point(b);if(coords)this.marker(coords,name(b),'building'+(b.id===this.selected?' active':''),()=>this.options.select?.(b.id),b.code);}
+  for(const c of this.data.canteens){if(!c.verified)continue;const coords=this.point(c)||this.point(this.data.buildings.find(b=>b.id===c.buildingId));if(coords)this.marker(coords,name(c),'hall',()=>this.options.selectHall?.(c.id));}
   for(const s of this.data.stores){if(!s.location?.verified||!hasGeo(s.location))continue;this.marker([s.location.lng,s.location.lat],name(s),'restaurant',()=>this.options.selectStore?.(s.id));}
+  for(const p of this.pois){if(p.kind==='building'||['food_court','restaurant','cafe','fast_food','ice_cream'].includes(p.kind))continue;this.marker([p.lng,p.lat],name(p),'poi',()=>this.showPoi(p));}
   if(hasGeo(this.editPoint))this.marker([this.editPoint.lng,this.editPoint.lat],t('选定位置','Selected position'),'edit');
   this.layoutLabels();
  }
- layoutLabels(){if(!this.gl)return;const zoom=this.gl.getZoom(),occupied=[];for(const m of this.markers){if(!m.kind.startsWith('building'))continue;const p=this.gl.project(m.marker.getLngLat());const w=zoom>=18?120:35,h=20;const overlap=occupied.some(q=>Math.abs(q.x-p.x)<(q.w+w)/2&&Math.abs(q.y-p.y)<h);m.el.style.visibility=overlap&&!m.kind.includes('active')?'hidden':'visible';m.el.textContent=zoom>=18?m.label:m.short;if(!overlap)occupied.push({x:p.x,y:p.y,w});}}
+ showPoi(p){if(!this.gl||this.unavailable)return;this.gl.easeTo({center:[p.lng,p.lat],zoom:18,duration:500});this.popup?.remove();const el=document.createElement('div');el.className='geo-popup';const title=document.createElement('h3');title.textContent=name(p);const text=document.createElement('p');text.textContent=t('原始点位来自 Campus Map / OpenStreetMap。','Original point from Campus Map / OpenStreetMap.');el.append(title,text);this.popup=new maplibregl.Popup({closeButton:true}).setLngLat([p.lng,p.lat]).setDOMContent(el).addTo(this.gl);}
+ layoutLabels(){if(!this.gl)return;const zoom=this.gl.getZoom(),occupied=[];for(const m of this.markers){const p=this.gl.project(m.marker.getLngLat());const building=m.kind.startsWith('building'),poi=m.kind==='poi',restaurant=m.kind==='restaurant';if(m.kind==='edit')continue;const full=building?zoom>=18:poi?zoom>=18:zoom>=17;
+ const text=full?m.label:(building?m.short:'');const w=full?Math.min(160,text.length*11+16):(building?35:14),h=full?28:18;const overlap=occupied.some(q=>Math.abs(q.x-p.x)<(q.w+w)/2&&Math.abs(q.y-p.y)<h);
+ m.el.textContent=text;m.el.classList.toggle('compact',restaurant&&!full);m.el.classList.toggle('poi-named',poi&&full);m.el.style.visibility=overlap&&!m.kind.includes('active')?'hidden':'visible';if(!overlap)occupied.push({x:p.x,y:p.y,w});}}
  destroy(){this.dead=true;this.resize?.disconnect();this.gl?.remove();for(const m of this.markers)m.marker.remove();this.markers=[];}
 }

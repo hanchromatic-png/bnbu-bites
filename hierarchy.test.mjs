@@ -50,7 +50,7 @@ test('requested catalog reset archives both snapshots and runs only once',async(
  const dir=mkdtempSync(join(tmpdir(),'bites-reset-'));const opts={dataDir:dir,origin:'https://example.com',email:'test@example.com',hash:passwordHash('test-only-password'),resetCatalog:true};
  let app=createApp(opts);try{
  const d=(await (await app.handle(new Request('https://example.com/api/data'))).json()).data;
- assert.equal(d.stores.length,0);assert.equal(d.dishes.length,0);assert.equal(d.buildings.length,36);assert.equal(d.canteens[0].buildingId,'');assert.equal(d.canteens[0].verified,true);assert.equal(d.canteens[0].x,12.5);assert.equal(d.canteens[0].y,8);
+ assert.equal(d.stores.length,92);assert.equal(d.dishes.length,0);assert.ok(d.buildings.length>=36);assert.equal(d.canteens[0].buildingId,'');assert.equal(d.canteens[0].verified,true);assert.equal(d.canteens[0].x,12.5);assert.equal(d.canteens[0].y,8);
  const backup=readFileSync(join(dir,'backups','catalog-before-reset-20261107.json'),'utf8');assert.equal(JSON.parse(backup).published.data.stores.length,48);
  app.close();app=createApp(opts);assert.equal(readFileSync(join(dir,'backups','catalog-before-reset-20261107.json'),'utf8'),backup);
  }finally{app.close();rmSync(dir,{recursive:true,force:true});}
@@ -99,4 +99,23 @@ test('campus tile snapshots contain raw protobuf layers, not compressed HTTP pay
   for(const [key,layer] of fields(bytes)){if(key===3){const name=fields(layer).find(([key])=>key===1)?.[1];assert.ok(name);layerNames.add(name.toString());}}
  }
  for(const expected of ['building','water','transportation'])assert.ok(layerNames.has(expected),expected);
+});
+
+import {campusRows,importCampusData} from './public/campus-import.js';
+import {clampOffset,shouldExpand} from './public/sheet-physics.js';
+test('original campus points keep exact coordinates and imports preserve later admin edits',()=>{
+ const raw=JSON.parse(readFileSync(new URL('./public/map-data/campus-poi-source.json',import.meta.url)));
+ const points=campusRows(raw);assert.equal(points.length,237);
+ const base=normalizeData(seed,buildings);base.stores=[];base.dishes=[];
+ const d=importCampusData(base,points);validateData(d);assert.equal(d.stores.length,92);assert.equal(d.dishes.length,0);
+ for(const s of d.stores){const p=points.find(p=>p.id===s.sourceId);assert.equal(s.location.lng,p.lng);assert.equal(s.location.lat,p.lat);assert.equal(s.canteenId,'');}
+ assert.equal(d.canteens.filter(c=>c.sourceId).length,8);
+ d.stores[0].zh='管理员修改';d.stores[0].location.lng=113.515;
+ assert.deepEqual(importCampusData(d,points),d);
+ const hall=d.canteens.find(c=>c.sourceId);hall.lng=113.516;hall.lat=22.355;validateData(d);delete hall.lat;assert.throws(()=>validateData(d));
+});
+test('mobile sheet clamps dragging and snaps by distance or flick direction',()=>{
+ assert.equal(clampOffset(-30,1000),0);assert.equal(clampOffset(900,1000),380);
+ assert.equal(shouldExpand(100,0,1000),true);assert.equal(shouldExpand(300,0,1000),false);
+ assert.equal(shouldExpand(300,-.6,1000),true);assert.equal(shouldExpand(50,.6,1000),false);
 });

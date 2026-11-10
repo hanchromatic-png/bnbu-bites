@@ -1,0 +1,3623 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-09T19:09:23Z",
+    "timestamp_areas_base": "2026-11-09T13:02:44Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 6215741711,
+  "lat": 22.3519374,
+  "lon": 113.5136955,
+  "tags": {
+    "access": "permit",
+    "entrance": "yes",
+    "name": "南3门",
+    "name:en": "South Gate 3"
+  }
+},
+{
+  "type": "node",
+  "id": 6215835344,
+  "lat": 22.3516585,
+  "lon": 113.5157701,
+  "tags": {
+    "artwork_type": "sculpture",
+    "inscription": "中外会通\n古今交融\n致中和\n天地位焉\n万物育焉\nMeeting of China and the West\nBlending of Past and Present\nThe Golden Mean and Grand Harmony achieved,\nHeaven and Earth shall rest in their proper places, and\nAll Creation shall thrive in natural order.",
+    "inscription:language": "zh;en",
+    "loc_name": "金手指",
+    "name": "中和",
+    "name:en": "The Golden Mean and Grand Harmony",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 6215835345,
+  "lat": 22.3532190,
+  "lon": 113.5146821,
+  "tags": {
+    "artwork_type": "sculpture",
+    "inscription": "妃子笑一一谨纪念本校园建设之前存在的荔枝园 In memory of the previous lychee orchard that once grew here",
+    "name": "妃子笑",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 9989780644,
+  "lat": 22.3504267,
+  "lon": 113.5154705,
+  "tags": {
+    "access": "permit",
+    "entrance": "yes",
+    "name": "南1门"
+  }
+},
+{
+  "type": "node",
+  "id": 9989780646,
+  "lat": 22.3508523,
+  "lon": 113.5149667,
+  "tags": {
+    "access": "permit",
+    "entrance": "yes",
+    "name": "南2门"
+  }
+},
+{
+  "type": "node",
+  "id": 9989780647,
+  "lat": 22.3509540,
+  "lon": 113.5150538,
+  "tags": {
+    "name": "校名石",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 9989780651,
+  "lat": 22.3520899,
+  "lon": 113.5138667,
+  "tags": {
+    "amenity": "parking_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 11063042269,
+  "lat": 22.3536325,
+  "lon": 113.5134257,
+  "tags": {
+    "brand": "7-Eleven",
+    "brand:wikidata": "Q259340",
+    "level": "0",
+    "name": "7-Eleven",
+    "note": "1F",
+    "shop": "convenience"
+  }
+},
+{
+  "type": "node",
+  "id": 11063100296,
+  "lat": 22.3543179,
+  "lon": 113.5136193,
+  "tags": {
+    "name": "金融商务中心",
+    "shop": "copyshop"
+  }
+},
+{
+  "type": "node",
+  "id": 11063100298,
+  "lat": 22.3528979,
+  "lon": 113.5139815,
+  "tags": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "level": "0",
+    "level:ref": "1",
+    "name": "医疗及健康教育中心",
+    "name:en": "Medical and Health Education Office",
+    "opening_hours": "Mo-Su 08:30-17:30,18:30-23:00",
+    "operator": "北京师范大学-香港浸会大学联合国际学院",
+    "phone": "+86 756 362 0555;+86 756 362 0120",
+    "website": "https://mheo.uic.edu.cn"
+  }
+},
+{
+  "type": "node",
+  "id": 11063115265,
+  "lat": 22.3532341,
+  "lon": 113.5173151,
+  "tags": {
+    "amenity": "food_court",
+    "name": "春晖园",
+    "name:en": "Chuihui Yuan Canteen"
+  }
+},
+{
+  "type": "node",
+  "id": 11140366352,
+  "lat": 22.3536696,
+  "lon": 113.5138561,
+  "tags": {
+    "amenity": "post_office",
+    "brand": "菜鸟驿站",
+    "brand:en": "CAI NIAO",
+    "brand:wikidata": "Q16947973",
+    "brand:zh": "菜鸟驿站",
+    "name": "菜鸟驿站",
+    "name:en": "CAI NIAO",
+    "name:zh": "菜鸟驿站",
+    "operator": "菜鸟驿站",
+    "operator:wikidata": "Q16947973"
+  }
+},
+{
+  "type": "node",
+  "id": 11140366360,
+  "lat": 22.3535834,
+  "lon": 113.5138087,
+  "tags": {
+    "amenity": "post_office",
+    "brand": "顺丰速运",
+    "brand:en": "SF Express",
+    "brand:short": "顺丰",
+    "brand:wikidata": "Q7390019",
+    "brand:zh": "顺丰速运",
+    "name": "顺丰速运",
+    "name:en": "SF Express",
+    "name:zh": "顺丰速运",
+    "operator": "顺丰速运",
+    "operator:wikidata": "Q7390019",
+    "short_name": "顺丰"
+  }
+},
+{
+  "type": "node",
+  "id": 11140543103,
+  "lat": 22.3615660,
+  "lon": 113.5113792,
+  "tags": {
+    "brand": "7-Eleven",
+    "brand:wikidata": "Q259340",
+    "name": "7-Eleven",
+    "shop": "convenience"
+  }
+},
+{
+  "type": "node",
+  "id": 11141442227,
+  "lat": 22.3614513,
+  "lon": 113.5101129,
+  "tags": {
+    "check_date": "2024-04-10",
+    "name": "得一便利",
+    "opening_hours": "24/7",
+    "shop": "convenience"
+  }
+},
+{
+  "type": "node",
+  "id": 11141455261,
+  "lat": 22.3522708,
+  "lon": 113.5150441,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "瑞幸咖啡",
+    "brand:en": "Luckin Coffee",
+    "brand:wikidata": "Q56811344",
+    "brand:zh": "瑞幸咖啡",
+    "cuisine": "coffee_shop",
+    "name": "瑞幸咖啡",
+    "name:en": "Luckin Coffee",
+    "name:zh": "瑞幸咖啡",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11141455262,
+  "lat": 22.3518048,
+  "lon": 113.5165326,
+  "tags": {
+    "brand": "7-Eleven",
+    "brand:wikidata": "Q259340",
+    "name": "7-Eleven",
+    "opening_hours": "08:00-22:00",
+    "shop": "convenience",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11141455263,
+  "lat": 22.3533667,
+  "lon": 113.5143047,
+  "tags": {
+    "amenity": "waste_transfer_station",
+    "name": "垃圾中转站",
+    "name:en": "Garbage Transfer Station"
+  }
+},
+{
+  "type": "node",
+  "id": 11141455264,
+  "lat": 22.3531918,
+  "lon": 113.5174572,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "肯德基",
+    "brand:en": "KFC",
+    "brand:wikidata": "Q524757",
+    "brand:zh": "肯德基",
+    "brand:zh-Hans": "肯德基",
+    "brand:zh-Hant": "肯德基",
+    "cuisine": "chicken",
+    "name": "肯德基",
+    "name:en": "KFC",
+    "name:zh": "肯德基",
+    "name:zh-Hans": "肯德基",
+    "name:zh-Hant": "肯德基",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11141661167,
+  "lat": 22.3617607,
+  "lon": 113.5112800,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "溢香源"
+  }
+},
+{
+  "type": "node",
+  "id": 11146188479,
+  "lat": 22.3533971,
+  "lon": 113.5135136,
+  "tags": {
+    "level": "1",
+    "name": "来客超市",
+    "note": "2F",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 11146188480,
+  "lat": 22.3531493,
+  "lon": 113.5129963,
+  "tags": {
+    "amenity": "food_court",
+    "cuisine": "chinese",
+    "name": "蜀香园"
+  }
+},
+{
+  "type": "node",
+  "id": 11146188481,
+  "lat": 22.3538399,
+  "lon": 113.5134789,
+  "tags": {
+    "amenity": "food_court",
+    "cuisine": "chinese",
+    "level": "1",
+    "name": "琢乐汇",
+    "note": "2F"
+  }
+},
+{
+  "type": "node",
+  "id": 11146188482,
+  "lat": 22.3524155,
+  "lon": 113.5133619,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "一点点",
+    "brand:en": "alittle-tea",
+    "brand:wikidata": "Q106926258",
+    "brand:zh": "一点点",
+    "cuisine": "bubble_tea",
+    "name": "一点点",
+    "name:en": "alittle-tea",
+    "name:zh": "一点点",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11146188483,
+  "lat": 22.3523518,
+  "lon": 113.5134780,
+  "tags": {
+    "leisure": "fitness_centre",
+    "name": "UGYM"
+  }
+},
+{
+  "type": "node",
+  "id": 11146188488,
+  "lat": 22.3542455,
+  "lon": 113.5135991,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese",
+    "name": "渝掌柜 板凳面"
+  }
+},
+{
+  "type": "node",
+  "id": 11147382145,
+  "lat": 22.3527658,
+  "lon": 113.5165720,
+  "tags": {
+    "addr:door": "101",
+    "addr:unit": "T4",
+    "email": "sao@bnbu.edu.cn",
+    "level": "0",
+    "level:ref": "1",
+    "name": "学生事务处",
+    "name:en": "Student Affairs Office",
+    "office": "consulting",
+    "opening_hours": "Mo-Fr 08:30-17:00,19:00-21:00; PH off",
+    "operator": "北京师范大学-香港浸会大学联合国际学院",
+    "phone": "+86 756 362 0227",
+    "short_name": "SAO",
+    "website": "https://sao.uic.edu.cn/"
+  }
+},
+{
+  "type": "node",
+  "id": 11147382146,
+  "lat": 22.3531612,
+  "lon": 113.5169429,
+  "tags": {
+    "addr:door": "103",
+    "addr:unit": "T4",
+    "email": "international@bnbu.edu.cn",
+    "level": "0",
+    "level:ref": "1",
+    "name": "国际发展处",
+    "name:en": "International Development Office",
+    "office": "consulting",
+    "operator": "北京师范大学-香港浸会大学联合国际学院",
+    "phone": "+86 0756 3620440",
+    "short_name": "IDO",
+    "website": "https://ido.uic.edu.cn/"
+  }
+},
+{
+  "type": "node",
+  "id": 11148179154,
+  "lat": 22.3533509,
+  "lon": 113.5170181,
+  "tags": {
+    "amenity": "social_centre",
+    "level": "1",
+    "level:ref": "2",
+    "name": "师生活动中心",
+    "name:en": "Staff and Student Activities Center",
+    "short_name": "SSAC;师活"
+  }
+},
+{
+  "type": "node",
+  "id": 11148179157,
+  "lat": 22.3604347,
+  "lon": 113.5100360,
+  "tags": {
+    "amenity": "post_office",
+    "brand": "菜鸟驿站",
+    "brand:en": "CAI NIAO",
+    "brand:wikidata": "Q16947973",
+    "brand:zh": "菜鸟驿站",
+    "name": "菜鸟驿站",
+    "name:en": "CAI NIAO",
+    "name:zh": "菜鸟驿站",
+    "opening_hours": "Mo-Su 09:00-19:00"
+  }
+},
+{
+  "type": "node",
+  "id": 11155323617,
+  "lat": 22.3535378,
+  "lon": 113.5133362,
+  "tags": {
+    "amenity": "restaurant",
+    "level": "0",
+    "name": "鑫梦园"
+  }
+},
+{
+  "type": "node",
+  "id": 11155323619,
+  "lat": 22.3520585,
+  "lon": 113.5154009,
+  "tags": {
+    "level": "0",
+    "level:ref": "1",
+    "name": "拾光文创馆",
+    "shop": "gift"
+  }
+},
+{
+  "type": "node",
+  "id": 11155323622,
+  "lat": 22.3521539,
+  "lon": 113.5137389,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "name": "尝绿"
+  }
+},
+{
+  "type": "node",
+  "id": 11160357959,
+  "lat": 22.3518395,
+  "lon": 113.5165564,
+  "tags": {
+    "amenity": "cafe",
+    "name": "浮屿",
+    "name:en": "For You",
+    "operator": "For You"
+  }
+},
+{
+  "type": "node",
+  "id": 11180462963,
+  "lat": 22.3544995,
+  "lon": 113.5129428,
+  "tags": {
+    "leisure": "fitness_centre",
+    "name": "MU 瑜伽·普拉提",
+    "sport": "yoga"
+  }
+},
+{
+  "type": "node",
+  "id": 11180462965,
+  "lat": 22.3545469,
+  "lon": 113.5132227,
+  "tags": {
+    "amenity": "restaurant",
+    "branch": "UIC北师港浸大店",
+    "name": "塔斯汀中国汉堡"
+  }
+},
+{
+  "type": "node",
+  "id": 11199597079,
+  "lat": 22.3530072,
+  "lon": 113.5126489,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "中盈餐厅"
+  }
+},
+{
+  "type": "node",
+  "id": 11199597082,
+  "lat": 22.3531070,
+  "lon": 113.5129667,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "牛坤记 沙县小吃"
+  }
+},
+{
+  "type": "node",
+  "id": 11206838636,
+  "lat": 22.3536251,
+  "lon": 113.5126622,
+  "tags": {
+    "name": "i果鲜切",
+    "shop": "greengrocer"
+  }
+},
+{
+  "type": "node",
+  "id": 11206950143,
+  "lat": 22.3537662,
+  "lon": 113.5127456,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "瑞幸咖啡",
+    "brand:en": "Luckin Coffee",
+    "brand:wikidata": "Q56811344",
+    "brand:zh": "瑞幸咖啡",
+    "cuisine": "coffee_shop",
+    "name": "瑞幸咖啡",
+    "name:en": "Luckin Coffee",
+    "name:zh": "瑞幸咖啡",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11206950144,
+  "lat": 22.3531514,
+  "lon": 113.5124993,
+  "tags": {
+    "amenity": "food_court",
+    "name": "UIC 休闲小栈"
+  }
+},
+{
+  "type": "node",
+  "id": 11206950146,
+  "lat": 22.3538205,
+  "lon": 113.5133983,
+  "tags": {
+    "amenity": "social_centre",
+    "level": "0",
+    "name": "师生活动中心",
+    "name:en": "Staff and Student Activities Center",
+    "note": "1F",
+    "short_name": "SSAC;师活"
+  }
+},
+{
+  "type": "node",
+  "id": 11206950153,
+  "lat": 22.3532581,
+  "lon": 113.5128000,
+  "tags": {
+    "amenity": "food_court",
+    "name": "味旋律"
+  }
+},
+{
+  "type": "node",
+  "id": 11206950158,
+  "lat": 22.3530751,
+  "lon": 113.5127649,
+  "tags": {
+    "access": "permit",
+    "entrance": "yes",
+    "name": "南4门",
+    "name:en": "South Gate 4",
+    "opening_hours": "06:30-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 11260191220,
+  "lat": 22.3533966,
+  "lon": 113.5159417,
+  "tags": {
+    "amenity": "lost_property_office",
+    "level": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 11263827428,
+  "lat": 22.3506888,
+  "lon": 113.5156236,
+  "tags": {
+    "amenity": "parking_entrance",
+    "parking": "underground"
+  }
+},
+{
+  "type": "node",
+  "id": 11263827430,
+  "lat": 22.3509171,
+  "lon": 113.5153307,
+  "tags": {
+    "amenity": "parking_entrance",
+    "parking": "underground"
+  }
+},
+{
+  "type": "node",
+  "id": 11671590280,
+  "lat": 22.3603420,
+  "lon": 113.5119108,
+  "tags": {
+    "emergency": "fire_hydrant",
+    "fire_hydrant:type": "pillar"
+  }
+},
+{
+  "type": "node",
+  "id": 11671590282,
+  "lat": 22.3611283,
+  "lon": 113.5103209,
+  "tags": {
+    "name": "校园图文",
+    "shop": "copyshop"
+  }
+},
+{
+  "type": "node",
+  "id": 11671590284,
+  "lat": 22.3604445,
+  "lon": 113.5118941,
+  "tags": {
+    "amenity": "bicycle_parking"
+  }
+},
+{
+  "type": "node",
+  "id": 11671590288,
+  "lat": 22.3606050,
+  "lon": 113.5111361,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "name": "简也茶集",
+    "name:en": "Can Tea"
+  }
+},
+{
+  "type": "node",
+  "id": 11683863456,
+  "lat": 22.3524741,
+  "lon": 113.5143875,
+  "tags": {
+    "amenity": "bench",
+    "backrest": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11683863459,
+  "lat": 22.3536542,
+  "lon": 113.5133264,
+  "tags": {
+    "amenity": "waste_disposal"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871923,
+  "lat": 22.3535423,
+  "lon": 113.5134323,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "库迪咖啡",
+    "brand:en": "Cotti Coffee",
+    "brand:wikidata": "Q123370986",
+    "brand:zh": "库迪咖啡",
+    "cuisine": "coffee_shop",
+    "level": "1",
+    "name": "库迪咖啡",
+    "name:en": "Cotti Coffee",
+    "name:zh": "库迪咖啡",
+    "note": "2F",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871924,
+  "lat": 22.3521591,
+  "lon": 113.5135701,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "心潮"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871925,
+  "lat": 22.3532637,
+  "lon": 113.5136537,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "蜜雪冰城",
+    "brand:en": "MIXUEBINGCHENG",
+    "brand:wikidata": "Q107406476",
+    "brand:zh": "蜜雪冰城",
+    "cuisine": "ice_cream;bubble_tea",
+    "level": "1",
+    "name": "蜜雪冰城",
+    "name:en": "MIXUEBINGCHENG",
+    "name:zh": "蜜雪冰城",
+    "note": "2F",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871926,
+  "lat": 22.3521219,
+  "lon": 113.5137204,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "name": "雾鲜"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871927,
+  "lat": 22.3521974,
+  "lon": 113.5135148,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "广式拉肠"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871928,
+  "lat": 22.3525388,
+  "lon": 113.5169250,
+  "tags": {
+    "artwork_type": "stone",
+    "name": "大同",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871929,
+  "lat": 22.3521491,
+  "lon": 113.5136542,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "Yo健康料理"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871931,
+  "lat": 22.3522379,
+  "lon": 113.5135398,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "拾圆·排骨掂",
+    "opening_hours": "Mo-Su 09:00-19:30"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871932,
+  "lat": 22.3522469,
+  "lon": 113.5135697,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "叻鲨朝"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871936,
+  "lat": 22.3520897,
+  "lon": 113.5137009,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "1762s"
+  }
+},
+{
+  "type": "node",
+  "id": 11723871937,
+  "lat": 22.3522178,
+  "lon": 113.5135281,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "云湘味"
+  }
+},
+{
+  "type": "node",
+  "id": 11733097045,
+  "lat": 22.3533582,
+  "lon": 113.5173213,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "大众自选 中式早餐"
+  }
+},
+{
+  "type": "node",
+  "id": 11733097046,
+  "lat": 22.3539053,
+  "lon": 113.5135207,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "东北人家"
+  }
+},
+{
+  "type": "node",
+  "id": 11733097050,
+  "lat": 22.3532918,
+  "lon": 113.5127754,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "喜记云饺"
+  }
+},
+{
+  "type": "node",
+  "id": 11733097051,
+  "lat": 22.3534124,
+  "lon": 113.5171168,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "牛肉饭"
+  }
+},
+{
+  "type": "node",
+  "id": 11733097054,
+  "lat": 22.3533462,
+  "lon": 113.5170822,
+  "tags": {
+    "name": "天天水果 水果捞",
+    "shop": "greengrocer"
+  }
+},
+{
+  "type": "node",
+  "id": 11733097055,
+  "lat": 22.3533911,
+  "lon": 113.5171907,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "港式烧腊"
+  }
+},
+{
+  "type": "node",
+  "id": 11866036930,
+  "lat": 22.3628296,
+  "lon": 113.5114736,
+  "tags": {
+    "amenity": "food_court",
+    "name": "今雨轩",
+    "operator": "Friends Canteen"
+  }
+},
+{
+  "type": "node",
+  "id": 11866036939,
+  "lat": 22.3628008,
+  "lon": 113.5118155,
+  "tags": {
+    "name": "UIC 高等研究院",
+    "name:en": "UIC Institute for Advanced Study",
+    "office": "educational_institution"
+  }
+},
+{
+  "type": "node",
+  "id": 11878758477,
+  "lat": 22.3602837,
+  "lon": 113.5111008,
+  "tags": {
+    "amenity": "doctors",
+    "healthcare": "doctor"
+  }
+},
+{
+  "type": "node",
+  "id": 11878758478,
+  "lat": 22.3537885,
+  "lon": 113.5148828,
+  "tags": {
+    "addr:door": "201",
+    "addr:unit": "T8",
+    "email": "itsc_support@bnbu.edu.cn",
+    "level": "1",
+    "level:ref": "2",
+    "name": "信息科技与服务中心",
+    "name:en": "Information and Technology Service Center",
+    "office": "it",
+    "opening_hours": "Mo-Fr 08:30-12:00,13:30-17:00; PH off",
+    "operator": "北京师范大学-香港浸会大学联合国际学院",
+    "phone": "+86 0756 3620315",
+    "short_name": "ITSC",
+    "website": "https://itsc.uic.edu.cn/"
+  }
+},
+{
+  "type": "node",
+  "id": 11878758480,
+  "lat": 22.3534575,
+  "lon": 113.5160350,
+  "tags": {
+    "amenity": "internet_cafe",
+    "level": "0",
+    "level:ref": "1",
+    "name": "计算机中心",
+    "name:en": "Computer Center",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12207172200,
+  "lat": 22.3511055,
+  "lon": 113.5162458,
+  "tags": {
+    "addr:door": "AD402",
+    "amenity": "restaurant",
+    "cuisine": "asian",
+    "level": "3",
+    "level:ref": "4",
+    "name": "贤贤居餐厅",
+    "name:en": "Staff's Club",
+    "opening_hours": "Mo-Su 11:00-14:00,16:30-19:30",
+    "operator": "珠海渔记餐饮管理有限公司",
+    "outdoor_seating": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12208940811,
+  "lat": 22.3532575,
+  "lon": 113.5127673,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "戴维斯"
+  }
+},
+{
+  "type": "node",
+  "id": 12208940812,
+  "lat": 22.3532160,
+  "lon": 113.5128178,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "湘聚缘"
+  }
+},
+{
+  "type": "node",
+  "id": 12367730213,
+  "lat": 22.3625292,
+  "lon": 113.5114268,
+  "tags": {
+    "defibrillator:location": "食堂外走廊/Corridor outside the canteen",
+    "emergency": "defibrillator",
+    "level": "0",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12378893090,
+  "lat": 22.3604087,
+  "lon": 113.5111189,
+  "tags": {
+    "emergency": "defibrillator",
+    "indoor": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 12378893091,
+  "lat": 22.3604955,
+  "lon": 113.5114086,
+  "tags": {
+    "emergency": "defibrillator",
+    "indoor": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 12378893092,
+  "lat": 22.3604632,
+  "lon": 113.5106951,
+  "tags": {
+    "defibrillator:location": "D4A男厕所旁边/Next to D4A men's room",
+    "emergency": "defibrillator",
+    "level": "0",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12686095454,
+  "lat": 22.3524179,
+  "lon": 113.5152081,
+  "tags": {
+    "defibrillator:location": "瑞幸对面/Opposite Luckin",
+    "emergency": "defibrillator",
+    "level": "0",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12686095455,
+  "lat": 22.3529119,
+  "lon": 113.5139128,
+  "tags": {
+    "defibrillator:location": "医务室左边/Next to the door of the doctor's office",
+    "emergency": "defibrillator",
+    "level": "0",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12686095456,
+  "lat": 22.3618921,
+  "lon": 113.5108040,
+  "tags": {
+    "defibrillator:location": "D6男厕所旁边/Next to the D6 men's room",
+    "emergency": "defibrillator",
+    "level": "0",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12686095457,
+  "lat": 22.3531361,
+  "lon": 113.5155734,
+  "tags": {
+    "defibrillator:location": "2F楼梯旁边/Next to the stairs",
+    "emergency": "defibrillator",
+    "level": "1",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12759013032,
+  "lat": 22.3509985,
+  "lon": 113.5160994,
+  "tags": {
+    "addr:unit": "AD",
+    "email": "uicemo@bnbu.edu.cn",
+    "level": "3",
+    "level:ref": "4",
+    "name": "物业管理处",
+    "name:en": "Estate Management Office",
+    "office": "university",
+    "opening_hours": "Mo-Fr 08:30-12:00,13:30-17:00; Sa-Su off; PH off",
+    "phone": "+86 0756 3620123",
+    "short_name": "EMO",
+    "website": "https://emo.uic.edu.cn/"
+  }
+},
+{
+  "type": "node",
+  "id": 12759013033,
+  "lat": 22.3510300,
+  "lon": 113.5161225,
+  "tags": {
+    "addr:door": "201",
+    "addr:unit": "AD",
+    "level": "1",
+    "level:ref": "2",
+    "name": "教务处",
+    "name:en": "Academic Registry",
+    "office": "university",
+    "opening_hours": "Mo-Fr 08:30-12:30,13:30-17:30 \"teaching weeks 1-14, exam period\"; Mo-Fr 08:30-12:00,13:30-17:00 \"outside teaching weeks 1-14, exam period\"; ",
+    "phone": "+86 0756 3620303",
+    "short_name": "AR",
+    "website": "https://ar.bnbu.edu.cn/"
+  }
+},
+{
+  "type": "node",
+  "id": 12762188821,
+  "lat": 22.3519694,
+  "lon": 113.5146019,
+  "tags": {
+    "emergency": "fire_hydrant",
+    "fire_hydrant:type": "pillar"
+  }
+},
+{
+  "type": "node",
+  "id": 12762188833,
+  "lat": 22.3517269,
+  "lon": 113.5153330,
+  "tags": {
+    "amenity": "fire_station"
+  }
+},
+{
+  "type": "node",
+  "id": 12762188837,
+  "lat": 22.3528569,
+  "lon": 113.5128952,
+  "tags": {
+    "name": "荔园百货超市",
+    "shop": "convenience"
+  }
+},
+{
+  "type": "node",
+  "id": 12790644290,
+  "lat": 22.3533150,
+  "lon": 113.5169094,
+  "tags": {
+    "access": "yes",
+    "defibrillator:location": "师生活动中心门口/Entrance of T4-SSAC",
+    "emergency": "defibrillator",
+    "indoor": "no",
+    "level": "1",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12816498287,
+  "lat": 22.3538529,
+  "lon": 113.5133576,
+  "tags": {
+    "defibrillator:location": "师生活动中心内/Inside T29-SSAC",
+    "emergency": "defibrillator",
+    "indoor": "yes",
+    "level": "0",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12816498288,
+  "lat": 22.3512593,
+  "lon": 113.5159366,
+  "tags": {
+    "defibrillator:location": "会堂楼梯口/Stairs of University Hall",
+    "emergency": "defibrillator",
+    "indoor": "yes",
+    "level": "1",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12816498289,
+  "lat": 22.3542012,
+  "lon": 113.5132861,
+  "tags": {
+    "defibrillator:location": "V24门口/Entrance of V24",
+    "emergency": "defibrillator",
+    "level": "0",
+    "opening_hours": "24/7",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12829505518,
+  "lat": 22.3509760,
+  "lon": 113.5160773,
+  "tags": {
+    "level": "3",
+    "level:ref": "4F",
+    "note": "Inside EMO",
+    "office": "lost_property"
+  }
+},
+{
+  "type": "node",
+  "id": 13052159142,
+  "lat": 22.3515733,
+  "lon": 113.5165237,
+  "tags": {
+    "amenity": "restaurant",
+    "brand": "必胜客",
+    "brand:en": "Pizza Hut",
+    "brand:wikidata": "Q191615",
+    "brand:zh": "必胜客",
+    "cuisine": "pizza",
+    "name": "必胜客",
+    "name:en": "Pizza Hut",
+    "name:zh": "必胜客"
+  }
+},
+{
+  "type": "node",
+  "id": 13052159144,
+  "lat": 22.3526701,
+  "lon": 113.5130285,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "臻苑私厨"
+  }
+},
+{
+  "type": "node",
+  "id": 13052226573,
+  "lat": 22.3517465,
+  "lon": 113.5165809,
+  "tags": {
+    "amenity": "bench"
+  }
+},
+{
+  "type": "node",
+  "id": 13052226574,
+  "lat": 22.3527415,
+  "lon": 113.5144221,
+  "tags": {
+    "email": "ic@bnbu.edu.cn",
+    "name": "创客中心",
+    "name:en": "Maker Center",
+    "name:zh": "创客中心",
+    "office": "yes",
+    "phone": "+86 0756 3677137",
+    "website": "https://ic.bnbu.edu.cn/"
+  }
+},
+{
+  "type": "node",
+  "id": 13052226575,
+  "lat": 22.3527035,
+  "lon": 113.5143139,
+  "tags": {
+    "name": "英语语言中心",
+    "name:en": "English Language Centre",
+    "name:zh": "英语语言中心",
+    "office": "university",
+    "short_name": "ELC"
+  }
+},
+{
+  "type": "node",
+  "id": 13184049732,
+  "lat": 22.3515775,
+  "lon": 113.5164580,
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "麦当劳",
+    "brand:en": "McDonald's",
+    "brand:wikidata": "Q38076",
+    "brand:zh": "麦当劳",
+    "cuisine": "burger",
+    "name": "麦当劳",
+    "name:en": "McDonald's",
+    "name:zh": "麦当劳",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13185617210,
+  "lat": 22.3607290,
+  "lon": 113.5095578,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13190127125,
+  "lat": 22.3534260,
+  "lon": 113.5170804,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "云南米线"
+  }
+},
+{
+  "type": "node",
+  "id": 13190127126,
+  "lat": 22.3515332,
+  "lon": 113.5165289,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "遇见小面"
+  }
+},
+{
+  "type": "node",
+  "id": 13190127127,
+  "lat": 22.3515502,
+  "lon": 113.5164861,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "星巴克",
+    "brand:en": "Starbucks",
+    "brand:wikidata": "Q37158",
+    "brand:zh": "星巴克",
+    "cuisine": "coffee_shop",
+    "name": "星巴克",
+    "name:en": "Starbucks",
+    "name:zh": "星巴克",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13271537361,
+  "lat": 22.3661077,
+  "lon": 113.5125178,
+  "tags": {
+    "amenity": "parking_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13381841511,
+  "lat": 22.3676793,
+  "lon": 113.5119548,
+  "tags": {
+    "amenity": "parking_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13381841691,
+  "lat": 22.3666056,
+  "lon": 113.5115404,
+  "tags": {
+    "amenity": "parking_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13381841737,
+  "lat": 22.3642542,
+  "lon": 113.5110297,
+  "tags": {
+    "amenity": "parking_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13383879519,
+  "lat": 22.3596157,
+  "lon": 113.5101369,
+  "tags": {
+    "amenity": "parking_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13383879534,
+  "lat": 22.3579204,
+  "lon": 113.5083741,
+  "tags": {
+    "amenity": "parking_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708419,
+  "lat": 22.3545593,
+  "lon": 113.5134461,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "屿可 Yekoo"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708420,
+  "lat": 22.3545342,
+  "lon": 113.5132907,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "常来·港记冰室"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708421,
+  "lat": 22.3542308,
+  "lon": 113.5134222,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "明洞拌饭"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708422,
+  "lat": 22.3542268,
+  "lon": 113.5133768,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "李思甜水果捞"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708424,
+  "lat": 22.3535194,
+  "lon": 113.5133404,
+  "tags": {
+    "amenity": "fast_food",
+    "level:ref": "1",
+    "name": "小街胡同牛杂面"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708425,
+  "lat": 22.3534606,
+  "lon": 113.5134192,
+  "tags": {
+    "amenity": "fast_food",
+    "level:ref": "2",
+    "name": "mr. wu 卤肉卷"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708426,
+  "lat": 22.3531237,
+  "lon": 113.5130043,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "记忆小笼包 原味汤粉王"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708427,
+  "lat": 22.3530961,
+  "lon": 113.5130486,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "花甲粉 砂锅米线"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708428,
+  "lat": 22.3530737,
+  "lon": 113.5130922,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "黄焖鸡米饭"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708429,
+  "lat": 22.3529621,
+  "lon": 113.5131732,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "好香趣小吃"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708430,
+  "lat": 22.3531411,
+  "lon": 113.5125470,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "name": "缥雪",
+    "opening_hours": "Mo-Su 10:00-19:30"
+  }
+},
+{
+  "type": "node",
+  "id": 13470708431,
+  "lat": 22.3530924,
+  "lon": 113.5126131,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "花间小点",
+    "opening_hours": "Mo-Su 10:30-22:00"
+  }
+},
+{
+  "type": "node",
+  "id": 13589512014,
+  "lat": 22.3527127,
+  "lon": 113.5147145,
+  "tags": {
+    "brand": "中国联通",
+    "brand:en": "China Unicom",
+    "brand:zh": "中国联通",
+    "name": "中国联通",
+    "name:en": "China Unicom",
+    "name:zh": "中国联通",
+    "opening_hours": "Mo-Fr 11:00-18:00",
+    "shop": "telecommunication"
+  }
+},
+{
+  "type": "node",
+  "id": 13589512015,
+  "lat": 22.3526891,
+  "lon": 113.5148080,
+  "tags": {
+    "brand": "中国电信",
+    "brand:en": "China Telecom",
+    "brand:zh": "中国电信",
+    "name": "中国电信",
+    "name:en": "China Telecom",
+    "name:zh": "中国电信",
+    "opening_hours": "Mo-Fr 11:00-18:00",
+    "shop": "telecommunication"
+  }
+},
+{
+  "type": "node",
+  "id": 13589512016,
+  "lat": 22.3541991,
+  "lon": 113.5133894,
+  "tags": {
+    "amenity": "food_court",
+    "name": "如意餐厅"
+  }
+},
+{
+  "type": "node",
+  "id": 13589512017,
+  "lat": 22.3515812,
+  "lon": 113.5166175,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "穆味王\n私房牛肉面",
+    "name:en": "Home Beef Noodles",
+    "name:zh": "穆味王\n私房牛肉面"
+  }
+},
+{
+  "type": "node",
+  "id": 13589512018,
+  "lat": 22.3526432,
+  "lon": 113.5148903,
+  "tags": {
+    "brand": "中国移动",
+    "brand:en": "China Mobile",
+    "brand:zh": "中国移动",
+    "name": "中国移动",
+    "name:en": "China Mobile",
+    "name:zh": "中国移动",
+    "opening_hours": "Mo-Fr 11:00-18:00",
+    "shop": "telecommunication"
+  }
+},
+{
+  "type": "node",
+  "id": 13589512019,
+  "lat": 22.3532324,
+  "lon": 113.5127890,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "桂源祥"
+  }
+},
+{
+  "type": "node",
+  "id": 13589512021,
+  "lat": 22.3521463,
+  "lon": 113.5152543,
+  "tags": {
+    "name": "拾光书屋",
+    "shop": "books"
+  }
+},
+{
+  "type": "node",
+  "id": 13597204664,
+  "lat": 22.3625701,
+  "lon": 113.5115446,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "老上海 餛飩鋪"
+  }
+},
+{
+  "type": "node",
+  "id": 13597204665,
+  "lat": 22.3533351,
+  "lon": 113.5133802,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "卤味熟食"
+  }
+},
+{
+  "type": "node",
+  "id": 13597204666,
+  "lat": 22.3625524,
+  "lon": 113.5116246,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "原味猪杂汤饭"
+  }
+},
+{
+  "type": "node",
+  "id": 13597204667,
+  "lat": 22.3613504,
+  "lon": 113.5101698,
+  "tags": {
+    "amenity": "parcel_locker",
+    "brand": "丰巢",
+    "brand:en": "Hive Box",
+    "brand:zh": "丰巢",
+    "name": "丰巢",
+    "name:en": "Hive Box",
+    "name:zh": "丰巢"
+  }
+},
+{
+  "type": "node",
+  "id": 13597204668,
+  "lat": 22.3625723,
+  "lon": 113.5117557,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "高手卤肉饭"
+  }
+},
+{
+  "type": "node",
+  "id": 13597204669,
+  "lat": 22.3626193,
+  "lon": 113.5118186,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "广式烧腊"
+  }
+},
+{
+  "type": "node",
+  "id": 13597204670,
+  "lat": 22.3626081,
+  "lon": 113.5114700,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "王喜峰 Spicy Hot Pot"
+  }
+},
+{
+  "type": "node",
+  "id": 13606936240,
+  "lat": 22.3628600,
+  "lon": 113.5119073,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "CV自选餐"
+  }
+},
+{
+  "type": "node",
+  "id": 13606936241,
+  "lat": 22.3515253,
+  "lon": 113.5159143,
+  "tags": {
+    "amenity": "atm",
+    "brand": "招商银行",
+    "brand:en": "China Merchants Bank",
+    "brand:zh": "招商银行",
+    "operator": "招商银行",
+    "operator:wikidata": "Q1073327"
+  }
+},
+{
+  "type": "node",
+  "id": 13606936242,
+  "lat": 22.3515364,
+  "lon": 113.5156985,
+  "tags": {
+    "amenity": "atm",
+    "brand": "中国农业银行",
+    "brand:en": "Agricultural Bank of China",
+    "brand:zh": "中国农业银行",
+    "operator": "中国农业银行",
+    "operator:wikidata": "Q26298"
+  }
+},
+{
+  "type": "node",
+  "id": 13640010032,
+  "lat": 22.3542134,
+  "lon": 113.5133522,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "吉祥 麻辣烫"
+  }
+},
+{
+  "type": "node",
+  "id": 13640010035,
+  "lat": 22.3530452,
+  "lon": 113.5126646,
+  "tags": {
+    "amenity": "fast_food",
+    "name": "多记甜品"
+  }
+},
+{
+  "type": "node",
+  "id": 13640010036,
+  "lat": 22.3535259,
+  "lon": 113.5133665,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "志少侠铁板饭"
+  }
+},
+{
+  "type": "node",
+  "id": 13640010037,
+  "lat": 22.3531356,
+  "lon": 113.5129820,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "小杨哥猪脚饭"
+  }
+},
+{
+  "type": "node",
+  "id": 13707926184,
+  "lat": 22.3515802,
+  "lon": 113.5165710,
+  "tags": {
+    "name": "时光蔬果",
+    "shop": "greengrocer"
+  }
+},
+{
+  "type": "node",
+  "id": 13739739840,
+  "lat": 22.3542317,
+  "lon": 113.5134351,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "japanese",
+    "name": "和风拉面"
+  }
+},
+{
+  "type": "node",
+  "id": 13842001377,
+  "lat": 22.3537663,
+  "lon": 113.5134822,
+  "tags": {
+    "alt_name": "炊班主干蒸菜",
+    "amenity": "restaurant",
+    "name": "顺德干蒸菜"
+  }
+},
+{
+  "type": "node",
+  "id": 13842001378,
+  "lat": 22.3538761,
+  "lon": 113.5135825,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "三津汤包"
+  }
+},
+{
+  "type": "node",
+  "id": 13842001381,
+  "lat": 22.3538534,
+  "lon": 113.5136311,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "味正香 自选套餐"
+  }
+},
+{
+  "type": "node",
+  "id": 13842020885,
+  "lat": 22.3534061,
+  "lon": 113.5133865,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "伴飽",
+    "name:en": "Yummy-For-Tummy"
+  }
+},
+{
+  "type": "node",
+  "id": 14112298205,
+  "lat": 22.3537286,
+  "lon": 113.5135648,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "港式小厨"
+  }
+},
+{
+  "type": "node",
+  "id": 14112298206,
+  "lat": 22.3538096,
+  "lon": 113.5136638,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "海南鸡饭"
+  }
+},
+{
+  "type": "node",
+  "id": 14112298207,
+  "lat": 22.3537913,
+  "lon": 113.5136554,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "北方手工水饺"
+  }
+},
+{
+  "type": "node",
+  "id": 14112298208,
+  "lat": 22.3538947,
+  "lon": 113.5135459,
+  "tags": {
+    "alt_name": "阿姨猪脚饭",
+    "amenity": "restaurant",
+    "name": "阿姨烧腊 猪脚"
+  }
+},
+{
+  "type": "node",
+  "id": 14112298213,
+  "lat": 22.3535748,
+  "lon": 113.5135114,
+  "tags": {
+    "entrance": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14113990200,
+  "lat": 22.3537718,
+  "lon": 113.5136460,
+  "tags": {
+    "alt_name": "嗦一口",
+    "amenity": "restaurant",
+    "name": "重庆小面"
+  }
+},
+{
+  "type": "node",
+  "id": 14114009001,
+  "lat": 22.3539184,
+  "lon": 113.5134474,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "黄大厨麻辣烫"
+  }
+},
+{
+  "type": "node",
+  "id": 14114009002,
+  "lat": 22.3537453,
+  "lon": 113.5135262,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "柳州螺蛳粉"
+  }
+},
+{
+  "type": "node",
+  "id": 14114009003,
+  "lat": 22.3532421,
+  "lon": 113.5135119,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "拌壹桶 干拌冒菜"
+  }
+},
+{
+  "type": "node",
+  "id": 14114009004,
+  "lat": 22.3531992,
+  "lon": 113.5135699,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "房记云妈罐罐米线"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004811,
+  "lat": 22.3534000,
+  "lon": 113.5171576,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "汤粉世家"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004812,
+  "lat": 22.3616772,
+  "lon": 113.5107421,
+  "tags": {
+    "amenity": "cafe",
+    "brand": "瑞幸咖啡",
+    "brand:en": "Luckin Coffee",
+    "brand:zh": "瑞幸咖啡",
+    "cuisine": "coffee_shop",
+    "name": "瑞幸咖啡",
+    "name:en": "Luckin Coffee",
+    "name:zh": "瑞幸咖啡",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004813,
+  "lat": 22.3519856,
+  "lon": 113.5155087,
+  "tags": {
+    "name": "花屿",
+    "shop": "florist"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004814,
+  "lat": 22.3536967,
+  "lon": 113.5127045,
+  "tags": {
+    "name": "幸运面包",
+    "shop": "bakery"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004815,
+  "lat": 22.3606655,
+  "lon": 113.5106066,
+  "tags": {
+    "name": "汤姆约克",
+    "name:en": "Tom York",
+    "shop": "bakery"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004816,
+  "lat": 22.3532766,
+  "lon": 113.5134714,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "弄潮"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004817,
+  "lat": 22.3534009,
+  "lon": 113.5173968,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "麻辣烫"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004818,
+  "lat": 22.3532501,
+  "lon": 113.5128603,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "name": "香纯茶栈",
+    "name:en": "Pure Tea House"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004819,
+  "lat": 22.3534176,
+  "lon": 113.5170300,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "悦轻荷 轻食"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004820,
+  "lat": 22.3534054,
+  "lon": 113.5174498,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "name": "果逗茶"
+  }
+},
+{
+  "type": "node",
+  "id": 14139004821,
+  "lat": 22.3533114,
+  "lon": 113.5134232,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "八爪鱼寿司"
+  }
+},
+{
+  "type": "node",
+  "id": 14142426069,
+  "lat": 22.3531644,
+  "lon": 113.5125157,
+  "tags": {
+    "amenity": "fast_food",
+    "cuisine": "burger;sandwich;beverages",
+    "name": "屿司",
+    "name:en": "Is.To",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14142426070,
+  "lat": 22.3531245,
+  "lon": 113.5125344,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese;cantonese",
+    "description": "原北师大十几年老店，主营煲仔饭",
+    "name": "得一煲仔饭",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14142426071,
+  "lat": 22.3531223,
+  "lon": 113.5124758,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese;noodle;hot_pot",
+    "description": "主营手工拌粉、土豆粉、小火锅",
+    "name": "青禾巷裡",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14142426072,
+  "lat": 22.3531038,
+  "lon": 113.5125094,
+  "tags": {
+    "amenity": "restaurant",
+    "cuisine": "chinese;tea;snack",
+    "description": "主营糯米小吃、甜茶",
+    "name": "遇见",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 14211693245,
+  "lat": 22.3515732,
+  "lon": 113.5150743,
+  "tags": {
+    "emergency": "fire_hydrant",
+    "fire_hydrant:type": "pillar"
+  }
+},
+{
+  "type": "node",
+  "id": 14211693246,
+  "lat": 22.3515012,
+  "lon": 113.5177954,
+  "tags": {
+    "amenity": "charging_station"
+  }
+},
+{
+  "type": "node",
+  "id": 14211693247,
+  "lat": 22.3513595,
+  "lon": 113.5151326,
+  "tags": {
+    "emergency": "fire_hydrant",
+    "fire_hydrant:type": "pillar"
+  }
+},
+{
+  "type": "node",
+  "id": 14239018403,
+  "lat": 22.3534961,
+  "lon": 113.5140521,
+  "tags": {
+    "name": "简 Hair Saloon",
+    "shop": "hairdresser"
+  }
+},
+{
+  "type": "node",
+  "id": 14279968110,
+  "lat": 22.3534203,
+  "lon": 113.5170972,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "WOW冰室"
+  }
+},
+{
+  "type": "node",
+  "id": 14296302344,
+  "lat": 22.3625974,
+  "lon": 113.5117902,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "面夫子 鲜肉包"
+  }
+},
+{
+  "type": "node",
+  "id": 14296302345,
+  "lat": 22.3625484,
+  "lon": 113.5116905,
+  "tags": {
+    "amenity": "restaurant",
+    "name": "清真 兰州牛肉面 饺子 浇盖饭"
+  }
+},
+{
+  "type": "node",
+  "id": 14318288935,
+  "lat": 22.3545522,
+  "lon": 113.5132845,
+  "tags": {
+    "amenity": "cafe",
+    "cuisine": "bubble_tea",
+    "name": "茶作"
+  }
+},
+{
+  "type": "way",
+  "id": 664082908,
+  "center": {
+    "lat": 22.3523537,
+    "lon": 113.5148681
+  },
+  "nodes": [
+    6215834946,
+    6215834947,
+    6215834948,
+    6215834949,
+    11264480673,
+    6215834950,
+    6215834951,
+    6215735377,
+    6215735378,
+    6215735379,
+    6215735380,
+    6215735381,
+    6215834957,
+    11264480671,
+    6215834952,
+    6215735382,
+    6215735372,
+    6215735373,
+    6215735374,
+    6215834946
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "6",
+    "layer": "1",
+    "name": "T2 人文楼",
+    "name:en": "T2 Humanities Building",
+    "name:zh": "T2 人文楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664082909,
+  "center": {
+    "lat": 22.3527163,
+    "lon": 113.5145511
+  },
+  "nodes": [
+    6215834942,
+    6215834943,
+    6215834944,
+    6215834945,
+    6215741190,
+    6215741191,
+    6215741192,
+    6215741193,
+    6215741194,
+    6215834950,
+    11264480673,
+    6215834949,
+    6215741195,
+    6215735383,
+    6215735384,
+    6215741185,
+    6215834942
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "6",
+    "name": "T3 格物楼",
+    "name:en": "T3 Science Building",
+    "name:zh": "T3 格物楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664082910,
+  "center": {
+    "lat": 22.3519150,
+    "lon": 113.5152254
+  },
+  "nodes": [
+    6215834955,
+    6215741197,
+    6215741196,
+    6215741206,
+    11264480669,
+    11264478566,
+    11264480670,
+    6215741205,
+    6215741204,
+    6215741203,
+    6215741202,
+    6215741201,
+    6215834956,
+    6215834957,
+    11264480671,
+    6215834952,
+    6215834953,
+    6215834954,
+    6215834955
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "6",
+    "name": "T1 厚德楼",
+    "name:en": "T1 Business and Management Building",
+    "name:zh": "T1 厚德楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664082911,
+  "center": {
+    "lat": 22.3513726,
+    "lon": 113.5163940
+  },
+  "nodes": [
+    6215741212,
+    6215741211,
+    6215741210,
+    6215741209,
+    6215741208,
+    6215741216,
+    6215741217,
+    6215741218,
+    6215741219,
+    6215741207,
+    6215741212
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "2",
+    "name": "清辉蜀华伉俪演艺厅",
+    "name:en": "Ching Fai & Shuk Wah Performance Theatre",
+    "name:zh": "清辉蜀华伉俪演艺厅",
+    "old_name": "吴清辉伉俪演艺厅",
+    "old_name:en": "Mr. & Mrs. Ching-Fai Ng Performance Theatre",
+    "old_name:zh": "吴清辉伉俪演艺厅"
+  }
+},
+{
+  "type": "way",
+  "id": 664082912,
+  "center": {
+    "lat": 22.3509595,
+    "lon": 113.5161159
+  },
+  "nodes": [
+    6215741220,
+    6215741223,
+    6215741224,
+    6215741207,
+    6215741219,
+    6215741218,
+    6215741217,
+    6215741216,
+    6215741215,
+    6215741214,
+    6215741213,
+    6215741220
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "6",
+    "name": "行政楼",
+    "name:en": "Administration Building",
+    "name:zh": "行政楼",
+    "short_name": "AD"
+  }
+},
+{
+  "type": "way",
+  "id": 664082913,
+  "center": {
+    "lat": 22.3510594,
+    "lon": 113.5157747
+  },
+  "nodes": [
+    6215741226,
+    6215741225,
+    6215741224,
+    6215741223,
+    6215741222,
+    6215741221,
+    6215741226
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "3",
+    "name": "大学会堂",
+    "name:en": "University Hall",
+    "name:zh": "大学会堂"
+  }
+},
+{
+  "type": "way",
+  "id": 664082915,
+  "center": {
+    "lat": 22.3515491,
+    "lon": 113.5147104
+  },
+  "nodes": [
+    6215741235,
+    6215741234,
+    6215741233,
+    6215741232,
+    6215741231,
+    6215741235
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "5",
+    "leisure": "sports_centre",
+    "name": "体育馆",
+    "name:en": "Sport Complex",
+    "short_name": "SP"
+  }
+},
+{
+  "type": "way",
+  "id": 664093256,
+  "center": {
+    "lat": 22.3530078,
+    "lon": 113.5167889
+  },
+  "nodes": [
+    6215834379,
+    6215834927,
+    6215834925,
+    6215834380,
+    6215834381,
+    6215834382,
+    6215834383,
+    6215834384,
+    11263827442,
+    11263827441,
+    11263827440,
+    11263827439,
+    6215834885,
+    6215834378,
+    6215834379
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "7",
+    "layer": "1",
+    "name": "T4 教学楼",
+    "name:en": "T4 Teaching Building",
+    "name:zh": "T4 教学楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093257,
+  "center": {
+    "lat": 22.3531857,
+    "lon": 113.5163064
+  },
+  "nodes": [
+    6215834941,
+    6215834376,
+    6215834377,
+    6215834378,
+    6215834885,
+    6215834886,
+    6215834887,
+    6215834888,
+    11141661190,
+    11141661191,
+    11141661192,
+    11141661193,
+    6215834889,
+    6215834374,
+    6215834375,
+    6215834938,
+    6215834939,
+    6215834940,
+    6215834941
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "7",
+    "layer": "1",
+    "name": "T5 教学楼",
+    "name:en": "T5 Teaching Building",
+    "name:zh": "T5 教学楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093258,
+  "center": {
+    "lat": 22.3533494,
+    "lon": 113.5157827
+  },
+  "nodes": [
+    6215834890,
+    6215834891,
+    11141661194,
+    11141661195,
+    11141661196,
+    11141661197,
+    6215834892,
+    6215834370,
+    6215834371,
+    6215834934,
+    6215834935,
+    6215834936,
+    6215834937,
+    6215834372,
+    6215834373,
+    6215834374,
+    6215834889,
+    6215834928,
+    6215834890
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "7",
+    "layer": "1",
+    "name": "T6 教学楼",
+    "name:en": "T6 Teaching Building",
+    "name:zh": "T6 教学楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093260,
+  "center": {
+    "lat": 22.3535979,
+    "lon": 113.5153218
+  },
+  "nodes": [
+    6215834933,
+    6215834368,
+    6215834369,
+    6215834370,
+    6215834892,
+    6215834893,
+    6215834894,
+    6215834895,
+    11141661198,
+    11141661199,
+    11141661200,
+    11141661201,
+    6215834896,
+    6215834366,
+    6215834367,
+    6215834930,
+    6215834931,
+    6215834932,
+    6215834933
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "7",
+    "layer": "1",
+    "name": "T7 教学楼",
+    "name:en": "T7 Teaching Building",
+    "name:zh": "T7 教学楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093261,
+  "center": {
+    "lat": 22.3538129,
+    "lon": 113.5148064
+  },
+  "nodes": [
+    6215834897,
+    6215834364,
+    6215834365,
+    6215834929,
+    6215834366,
+    6215834896,
+    6215834897
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "6",
+    "name": "T8 博简楼",
+    "name:en": "T8 CEFC Building",
+    "name:zh": "T8 博简楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093272,
+  "center": {
+    "lat": 22.3524590,
+    "lon": 113.5136481
+  },
+  "nodes": [
+    6215834958,
+    6215834959,
+    6215834960,
+    6215834961,
+    6215834962,
+    6215834963,
+    6215834964,
+    6215834958
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "7",
+    "name": "V28 莎翁楼",
+    "name:en": "V28 Shakespeare House",
+    "name:zh": "V28 莎翁楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093273,
+  "center": {
+    "lat": 22.3535077,
+    "lon": 113.5126791
+  },
+  "nodes": [
+    6215834965,
+    6215834966,
+    6215834967,
+    6215834968,
+    6215834969,
+    6215834970,
+    6215834971,
+    6215834965
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "7",
+    "name": "V27 雨果楼",
+    "name:en": "V27 Hugo House",
+    "name:zh": "V27 雨果楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093274,
+  "center": {
+    "lat": 22.3531148,
+    "lon": 113.5125158
+  },
+  "nodes": [
+    6215834972,
+    6215834973,
+    6215834974,
+    6215834975,
+    6215834972
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "4",
+    "name": "榆栈",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 664093275,
+  "center": {
+    "lat": 22.3533624,
+    "lon": 113.5133833
+  },
+  "nodes": [
+    6215834976,
+    6215834977,
+    6215834978,
+    6215834979,
+    6215834980,
+    6215835227,
+    6215834981,
+    6215834982,
+    6215834976
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "7",
+    "layer": "2",
+    "name": "V26 歌德楼",
+    "name:en": "V26 Goethe House",
+    "name:zh": "V26 歌德楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093276,
+  "center": {
+    "lat": 22.3531600,
+    "lon": 113.5139027
+  },
+  "nodes": [
+    6215834983,
+    6215834984,
+    11063218495,
+    11063218496,
+    6215835186,
+    6215835226,
+    6215835187,
+    6215835188,
+    6215835189,
+    6215835225,
+    6215834983
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "8",
+    "layer": "1",
+    "name": "V25 东坡楼",
+    "name:en": "V25 Dong Po House",
+    "name:zh": "V25 东坡楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093277,
+  "center": {
+    "lat": 22.3544759,
+    "lon": 113.5137204
+  },
+  "nodes": [
+    6215835190,
+    6215835191,
+    6215835192,
+    6215835193,
+    11180560617,
+    11180560614,
+    6215835194,
+    6215835195,
+    6215835196,
+    6215835190
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "V23 雪芹楼",
+    "name:en": "V23 Xue Qin House",
+    "name:zh": "V23 雪芹楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093278,
+  "center": {
+    "lat": 22.3543628,
+    "lon": 113.5133521
+  },
+  "nodes": [
+    6215835197,
+    6215835198,
+    6215835199,
+    6215835200,
+    11180560615,
+    11180560616,
+    6215835201,
+    6215835202,
+    6215835203,
+    6215835197
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "layer": "1",
+    "name": "V24 阳明楼",
+    "name:en": "V24 Yang Ming House",
+    "name:zh": "V24 阳明楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093280,
+  "center": {
+    "lat": 22.3543334,
+    "lon": 113.5152025
+  },
+  "nodes": [
+    6215835229,
+    6215835230,
+    6215835231,
+    6215835232,
+    6215835242,
+    6215835243,
+    6215835233,
+    6215835234,
+    6215835229
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "V20 笃行楼",
+    "name:en": "V20 Du Xing House",
+    "name:zh": "V20 笃行楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093281,
+  "center": {
+    "lat": 22.3547471,
+    "lon": 113.5151693
+  },
+  "nodes": [
+    6215835235,
+    6215835236,
+    6215835237,
+    6215835238,
+    6215835241,
+    6215835239,
+    6215835240,
+    6215835235
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "V19 真知楼",
+    "name:en": "V19 Zhen Zhi House",
+    "name:zh": "V19 真知楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093283,
+  "center": {
+    "lat": 22.3547258,
+    "lon": 113.5144959
+  },
+  "nodes": [
+    6215835244,
+    6215835245,
+    6215835246,
+    6215835259,
+    6215835247,
+    6215835248,
+    6215835249,
+    6215835250,
+    6215835260,
+    6215835261,
+    6215835244
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "V21 博文楼",
+    "name:en": "V21 Bo Wen House",
+    "name:zh": "V21 博文楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093285,
+  "center": {
+    "lat": 22.3543053,
+    "lon": 113.5144780
+  },
+  "nodes": [
+    6215835253,
+    6215835254,
+    6215835255,
+    6215835256,
+    6215835251,
+    6215835252,
+    6215835257,
+    6215835258,
+    6215835253
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "V22 雅志楼",
+    "name:en": "V22 Ya Zhi House",
+    "name:zh": "V22 雅志楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093286,
+  "center": {
+    "lat": 22.3541478,
+    "lon": 113.5160236
+  },
+  "nodes": [
+    6215835262,
+    6215835263,
+    6215835264,
+    6215835265,
+    6215835266,
+    6215835267,
+    6215835268,
+    6215835269,
+    6215835262
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "8",
+    "name": "V18 抱朴楼",
+    "name:en": "V18 Bao Pu House",
+    "name:zh": "V18 抱朴楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093287,
+  "center": {
+    "lat": 22.3547119,
+    "lon": 113.5159151
+  },
+  "nodes": [
+    6215835270,
+    6215835271,
+    6215835272,
+    6215835273,
+    6215835274,
+    6215835275,
+    6215835270
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "V17 仁爱楼",
+    "name:en": "V17 Ren Ai House",
+    "name:zh": "V17 仁爱楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093288,
+  "center": {
+    "lat": 22.3538832,
+    "lon": 113.5169717
+  },
+  "nodes": [
+    6215835276,
+    6215835277,
+    6215835278,
+    6215835279,
+    6215835280,
+    6215835281,
+    6215835282,
+    6215835283,
+    6215835276
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "7",
+    "name": "V16 尚贤楼",
+    "name:en": "V16 Shang Xian House",
+    "name:zh": "V16 尚贤楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093289,
+  "center": {
+    "lat": 22.3542448,
+    "lon": 113.5167935
+  },
+  "nodes": [
+    6215835284,
+    6215835285,
+    6215835286,
+    6215835287,
+    6215835288,
+    6215835289,
+    6215835284
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "6",
+    "name": "V15 明心楼",
+    "name:en": "V15 Ming Xin House",
+    "name:zh": "V15 明心楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093290,
+  "center": {
+    "lat": 22.3517820,
+    "lon": 113.5174394
+  },
+  "nodes": [
+    6215835307,
+    6215835294,
+    9989780650,
+    9989780648,
+    9989780649,
+    6215835311,
+    6215835295,
+    6215835296,
+    6215835290,
+    6215835291,
+    6215835292,
+    6215835293,
+    6215835309,
+    6215835310,
+    6215835297,
+    6215835298,
+    6215835299,
+    6215835300,
+    6215835301,
+    6215835302,
+    6215835303,
+    6215835304,
+    6215835305,
+    6215835306,
+    6215835307
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "5",
+    "name": "文化创意群落",
+    "name:en": "Cultural Creativity Clusters",
+    "name:zh": "文化创意群落",
+    "short_name": "CC"
+  }
+},
+{
+  "type": "way",
+  "id": 664093294,
+  "center": {
+    "lat": 22.3539434,
+    "lon": 113.5138758
+  },
+  "nodes": [
+    11183682522,
+    6215835332,
+    6215835333,
+    6215835210,
+    6215835211,
+    6215835212,
+    6215835336,
+    6215835213,
+    11063218494,
+    6215835335,
+    11183682522
+  ],
+  "tags": {
+    "building": "university",
+    "building:levels": "6",
+    "layer": "2",
+    "name": "T29 教学楼",
+    "name:en": "T29 Teaching Building",
+    "name:zh": "T29 教学楼"
+  }
+},
+{
+  "type": "way",
+  "id": 664093297,
+  "center": {
+    "lat": 22.3512938,
+    "lon": 113.5154155
+  },
+  "nodes": [
+    6215835337,
+    6215835338,
+    6215835339,
+    6215835340,
+    6215835341,
+    6215835342,
+    6215835343,
+    6215835337
+  ],
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1081327620,
+  "center": {
+    "lat": 22.3529774,
+    "lon": 113.5131832
+  },
+  "nodes": [
+    9910969644,
+    9910969645,
+    9910969646,
+    9910969647,
+    9910969644
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "7",
+    "name": "V29 容闳楼",
+    "name:en": "V29 Yung Wing House",
+    "name:zh": "V29 容闳楼"
+  }
+},
+{
+  "type": "way",
+  "id": 1090664747,
+  "center": {
+    "lat": 22.3519535,
+    "lon": 113.5140648
+  },
+  "nodes": [
+    9989780657,
+    14142532953,
+    9989780656,
+    9989780655,
+    14142532948,
+    9989780654,
+    9989780653,
+    9989780652,
+    9989780651,
+    9989780657
+  ],
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 1201625881,
+  "center": {
+    "lat": 22.3536080,
+    "lon": 113.5180019
+  },
+  "nodes": [
+    11140608508,
+    11140608507,
+    11140608506,
+    11140608505,
+    11140608508
+  ],
+  "tags": {
+    "leisure": "pitch",
+    "sport": "archery"
+  }
+},
+{
+  "type": "way",
+  "id": 1215983507,
+  "center": {
+    "lat": 22.3524876,
+    "lon": 113.5157786
+  },
+  "nodes": [
+    6215835315,
+    6215835312,
+    6215835313,
+    13533453783,
+    11266541757,
+    13533453782,
+    11266541755,
+    11266541762,
+    11266541763,
+    6215741227,
+    6215835314,
+    6215835315
+  ],
+  "tags": {
+    "amenity": "library",
+    "building": "university",
+    "building:levels": "1",
+    "name": "学习资源中心",
+    "name:en": "Learning Resource Center",
+    "name:zh": "学习资源中心",
+    "operator": "北师香港浸会大学",
+    "toilets": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1238241279,
+  "center": {
+    "lat": 22.3536898,
+    "lon": 113.5130524
+  },
+  "nodes": [
+    11502444501,
+    6215741528,
+    11502444502,
+    11502444510,
+    11502444506,
+    11502444507,
+    11162632256,
+    11502444509,
+    11502444503,
+    11502444508,
+    11502444504,
+    11502444505,
+    11502444501
+  ],
+  "tags": {
+    "area": "yes",
+    "highway": "pedestrian",
+    "name": "会贤邨广场",
+    "name:en": "Huixian Village Square",
+    "name:zh": "会贤邨广场"
+  }
+},
+{
+  "type": "way",
+  "id": 1256778264,
+  "center": {
+    "lat": 22.3536511,
+    "lon": 113.5120673
+  },
+  "nodes": [
+    11683863460,
+    11683863447,
+    11683863433,
+    14269872191,
+    14269872197,
+    14269872198,
+    11683863450,
+    11683863460
+  ],
+  "tags": {
+    "amenity": "parking"
+  }
+},
+{
+  "type": "way",
+  "id": 1434554455,
+  "center": {
+    "lat": 22.3614644,
+    "lon": 113.5120390
+  },
+  "nodes": [
+    13185617188,
+    13185617187,
+    13185617186,
+    13185617185,
+    13185617188
+  ],
+  "tags": {
+    "amenity": "bicycle_parking",
+    "building": "roof"
+  }
+},
+{
+  "type": "way",
+  "id": 1434554456,
+  "center": {
+    "lat": 22.3615434,
+    "lon": 113.5119861
+  },
+  "nodes": [
+    13185617192,
+    13185617191,
+    13185617190,
+    13185617189,
+    13185617192
+  ],
+  "tags": {
+    "amenity": "bicycle_parking",
+    "building": "roof"
+  }
+},
+{
+  "type": "way",
+  "id": 1434554457,
+  "center": {
+    "lat": 22.3605649,
+    "lon": 113.5094718
+  },
+  "nodes": [
+    13185617209,
+    13185617208,
+    13185617207,
+    13185617206,
+    13185617205,
+    13185617204,
+    13185617210,
+    13185617209
+  ],
+  "tags": {
+    "amenity": "waste_transfer_station",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1443870310,
+  "center": {
+    "lat": 22.3535436,
+    "lon": 113.5123842
+  },
+  "nodes": [
+    13249306386,
+    13249306389,
+    13249306393,
+    11683863447,
+    11683863433,
+    13249306388,
+    13249306386
+  ],
+  "tags": {
+    "amenity": "food_court",
+    "description": "小吃摊贩聚集区",
+    "opening_hours": "12:00-23:30"
+  }
+},
+{
+  "type": "way",
+  "id": 1459105110,
+  "center": {
+    "lat": 22.3663132,
+    "lon": 113.5130731
+  },
+  "nodes": [
+    13381836596,
+    13381836595,
+    13381836594,
+    13381836593,
+    13381836592,
+    13381836591,
+    13381836590,
+    13381836589,
+    13381836588,
+    13381836587,
+    13381836586,
+    13381836585,
+    13381836584,
+    13381836583,
+    13381836582,
+    13381836581,
+    13381836596
+  ],
+  "tags": {
+    "building": "construction",
+    "construction": "roof",
+    "height": "9.9",
+    "layer": "1",
+    "name": "东大门",
+    "operator": "北师香港浸会大学"
+  }
+},
+{
+  "type": "way",
+  "id": 1459105115,
+  "center": {
+    "lat": 22.3683373,
+    "lon": 113.5125801
+  },
+  "nodes": [
+    13381841529,
+    13381841528,
+    13381841527,
+    13381841526,
+    13381841529
+  ],
+  "tags": {
+    "amenity": "bicycle_parking"
+  }
+},
+{
+  "type": "way",
+  "id": 1459105119,
+  "center": {
+    "lat": 22.3678460,
+    "lon": 113.5124627
+  },
+  "nodes": [
+    13381841610,
+    13381841609,
+    13381841608,
+    13381841607,
+    13381841606,
+    13381841605,
+    13381841604,
+    13381841603,
+    13381841556,
+    13381841555,
+    13381841554,
+    13381841553,
+    13381841552,
+    13381841551,
+    13381841550,
+    13381841549,
+    13381841548,
+    13381841547,
+    13381841546,
+    13381841545,
+    13381841602,
+    13381841601,
+    13381841600,
+    13381841599,
+    13381841598,
+    13381841597,
+    13381841610
+  ],
+  "tags": {
+    "building": "construction",
+    "building:levels": "10",
+    "construction": "university",
+    "height": "61.10",
+    "layer": "3",
+    "name": "学习资源中心",
+    "name:en": "Learning Resource Center",
+    "name:zh": "学习资源中心"
+  }
+},
+{
+  "type": "way",
+  "id": 1498120892,
+  "center": {
+    "lat": 22.3535751,
+    "lon": 113.5173220
+  },
+  "nodes": [
+    13720025825,
+    13720025826,
+    13720025827,
+    13720025828,
+    13720025829,
+    13720025825
+  ],
+  "tags": {
+    "leisure": "garden"
+  }
+},
+{
+  "type": "way",
+  "id": 1554526508,
+  "center": {
+    "lat": 22.3546025,
+    "lon": 113.5140879
+  },
+  "nodes": [
+    14142532944,
+    14142532945,
+    14142532946,
+    14142532947,
+    14142532944
+  ],
+  "tags": {
+    "amenity": "bicycle_parking"
+  }
+},
+{
+  "type": "way",
+  "id": 1554526509,
+  "center": {
+    "lat": 22.3518400,
+    "lon": 113.5142998
+  },
+  "nodes": [
+    14142532949,
+    14142532950,
+    14142532951,
+    14142532952,
+    14142532949
+  ],
+  "tags": {
+    "amenity": "bicycle_parking"
+  }
+},
+{
+  "type": "relation",
+  "id": 16121437,
+  "center": {
+    "lat": 22.3602797,
+    "lon": 113.5113932
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 1191618595,
+      "role": "inner"
+    },
+    {
+      "type": "way",
+      "ref": 1191618594,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "10",
+    "name": "D3 乐雅苑",
+    "name:en": "D3 Joyful Education Hall",
+    "name:zh": "D3 乐雅苑",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 16121438,
+  "center": {
+    "lat": 22.3603663,
+    "lon": 113.5102784
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 1191618597,
+      "role": "inner"
+    },
+    {
+      "type": "way",
+      "ref": 1191618596,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "10",
+    "name": "D4",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 16121439,
+  "center": {
+    "lat": 22.3618645,
+    "lon": 113.5116079
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 1191618598,
+      "role": "inner"
+    },
+    {
+      "type": "way",
+      "ref": 1191618599,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "10",
+    "name": "D1 雍雅苑",
+    "name:en": "D1 Harmony Education Hall",
+    "name:zh": "D1 雍雅苑",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 16121440,
+  "center": {
+    "lat": 22.3609771,
+    "lon": 113.5118106
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 1191618601,
+      "role": "inner"
+    },
+    {
+      "type": "way",
+      "ref": 1191618602,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "10",
+    "name": "D2",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 16123936,
+  "center": {
+    "lat": 22.3619530,
+    "lon": 113.5104900
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 1191854789,
+      "role": "inner"
+    },
+    {
+      "type": "way",
+      "ref": 1191854790,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "10",
+    "name": "D6 正雅苑",
+    "name:en": "D6 Positive Education Hall",
+    "name:zh": "D6 正雅苑",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 16123937,
+  "center": {
+    "lat": 22.3612554,
+    "lon": 113.5100695
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 1191854791,
+      "role": "inner"
+    },
+    {
+      "type": "way",
+      "ref": 1191854792,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "building": "dormitory",
+    "building:levels": "10",
+    "name": "D5 宏雅苑",
+    "name:en": "D5 Glorious Education Hall",
+    "name:zh": "D5 宏雅苑",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 19432156,
+  "center": {
+    "lat": 22.3544998,
+    "lon": 113.5163697
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 664093287,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 664093289,
+      "role": ""
+    }
+  ],
+  "tags": {
+    "amenity": "student_accommodation",
+    "name": "科雅苑",
+    "name:en": "Scientific Education Hall",
+    "name:zh": "科雅苑",
+    "type": "site"
+  }
+}
+
+  ]
+}

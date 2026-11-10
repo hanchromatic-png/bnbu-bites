@@ -6,5 +6,7 @@ Data: © OpenStreetMap contributors, ODbL 1.0 https://www.openstreetmap.org/copy
 Tile schema: OpenMapTiles, BSD 3-Clause https://github.com/openmaptiles/openmaptiles
 The four 14-x-y.json files contain base64-encoded, unmodified vector tiles.
 These files and building-labels.json form the downloadable ODbL map dataset.
-Map data are independent of the private, administrator-maintained restaurant catalog.
-No upstream restaurant, menu, tracking, account, or comment data are imported.
+campus-poi-source.json preserves the original 237-point POI dataset; campus-poi.json normalizes it.
+Source dataset timestamp: 2026-11-09T19:09:23Z.
+At the owner's request, original dining POIs are imported once into the administrator catalog.
+Subsequent administrator edits and deletions are preserved. No menus, tracking, accounts, or comments are imported.

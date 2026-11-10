@@ -6,6 +6,8 @@ import { randomBytes, createHash, scryptSync, timingSafeEqual, randomUUID } from
 import { pathToFileURL } from 'node:url';
 import { validateData } from './security.ts';
 import { normalizeData } from './public/domain.js';
+import { importCampusData } from './public/campus-import.js';
+const campusPois=JSON.parse(readFileSync(new URL('./public/map-data/campus-poi.json',import.meta.url),'utf8'));
 const defaultBuildings=JSON.parse(readFileSync(new URL('./public/building-defaults.json',import.meta.url),'utf8'));
 const root=import.meta.dirname;
 const sha=s=>createHash('sha256').update(s).digest('hex');
@@ -63,6 +65,18 @@ export function createApp({resetCatalog=false,dataDir=process.env.DATA_DIR||reso
     }
    }
    db.prepare('INSERT INTO audit VALUES(?,?,?)').run('east-lake-hall-20261108','Add user-identified dining hall beside theatre; name pending',new Date().toISOString());db.exec('COMMIT');
+  }catch(e){db.exec('ROLLBACK');throw e;}
+ }
+ // One-time import requested by the user. Preserve both catalog snapshots and manual edits.
+ if(resetCatalog&&!db.prepare('SELECT id FROM audit WHERE id=?').get('campus-poi-import-20261111')){
+  const saved={published:snapshot('published'),draft:snapshot('draft')};
+  mkdirSync(resolve(dataDir,'backups'),{recursive:true});
+  writeFileSync(resolve(dataDir,'backups','before-campus-poi-import-20261111.json'),JSON.stringify(saved),{mode:0o600});
+  db.exec('BEGIN IMMEDIATE');try{
+   for(const id of ['published','draft']){const old=saved[id],d=importCampusData(old.data,campusPois);d.updated=new Date().toISOString();validateData(d);
+    db.prepare('INSERT INTO state VALUES(?,?,?,?) ON CONFLICT(id) DO UPDATE SET body=excluded.body,revision=excluded.revision,updated=excluded.updated').run(id,JSON.stringify(d),old.revision+1,d.updated);
+   }
+   db.prepare('INSERT INTO audit VALUES(?,?,?)').run('campus-poi-import-20261111','Import original Campus Map points at user request',new Date().toISOString());db.exec('COMMIT');
   }catch(e){db.exec('ROLLBACK');throw e;}
  }
  const token=r=>sha((r.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>x.startsWith('bnbu_session='))?.slice(13)||'');

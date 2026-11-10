@@ -5,9 +5,3 @@ export function coordinateFor(p,labels=[]){
  const b=p?.code&&labels.find(b=>b.code.toUpperCase()===p.code.toUpperCase());
  return b?[b.lng,b.lat]:null;
 }
-// Approximate reference positions from the user's confirmed campus-map annotations.
-// Kept separate from verified administrator coordinates; never written into the catalog.
-export const hallReferences={
- 'hall-phase2':{lng:113.51170,lat:22.36272},
- 'hall-east-lake':{lng:113.51655,lat:22.35162}
-};
