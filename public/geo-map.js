@@ -22,7 +22,7 @@ export class GeoCampusMap {
  }
  async init(){
   try{
-   if(!globalThis.maplibregl?.supported())throw Error('WebGL unavailable');
+   if(!globalThis.maplibregl?.Map)throw Error('Map renderer unavailable');
    if(!protocolReady){maplibregl.addProtocol('campus',(params,callback)=>{const controller=new AbortController();const parts=params.url.match(/^campus:\/\/14\/(\d+)\/(\d+)$/);if(!parts){callback(Error('Invalid campus tile'));return {cancel(){}};}const x=Number(parts[1]),y=Number(parts[2]);if(![13357,13358].includes(x)||![7147,7148].includes(y)){callback(null,new ArrayBuffer(0));return {cancel(){}};}fetch(`/map-data/14-${x}-${y}.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Map tile unavailable');return r.json()}).then(d=>callback(null,Uint8Array.from(atob(d.data),c=>c.charCodeAt(0)).buffer)).catch(e=>{if(e.name!=='AbortError')callback(e)});return {cancel:()=>controller.abort()};});protocolReady=true;}
    this.gl=new maplibregl.Map({container:this.surface,style:style(),...HOME,minZoom:14,maxZoom:20,maxBounds:[[113.505,22.347],[113.524,22.366]],attributionControl:{compact:true},renderWorldCopies:false});
    this.gl.on('error',()=>{if(!this.dead&&this.mode==='geo')this.caption.textContent=t('地图加载异常，可切换示意图。','Map could not fully load. Switch to the diagram.');});
@@ -31,7 +31,7 @@ export class GeoCampusMap {
    this.gl.on('load',()=>{if(!this.dead){this.refreshChrome();this.paint();}});
    this.resize=new ResizeObserver(()=>this.gl?.resize());this.resize.observe(this.surface);
    const res=await fetch('/map-data/building-labels.json');if(!res.ok)throw Error('Building labels unavailable');this.labels=await res.json();if(this.dead)return;this.paint();
-  }catch(e){if(!this.dead){this.unavailable=true;this.switchMode('legacy');}}
+  }catch(e){console.warn('Campus map fallback:',e.message);if(!this.dead){this.unavailable=true;this.switchMode('legacy');}}
  }
  refreshChrome(){this.modeButton.textContent=this.mode==='geo'?t('切换示意图','Campus diagram'):t('切换 3D 地图','3D campus map');this.modeButton.disabled=!!this.unavailable;this.caption.textContent=this.mode==='geo'?t('开源校园地图 · 滚轮/双指缩放 · 位置以现场为准','Open campus map · Scroll/pinch to zoom · Verify locations on site'):t('旧版示意图 · 原有标点保留','Campus diagram · Original pins retained');
   if(this.mode==='geo'&&this.gl&&!this.controls){this.controls=document.createElement('div');this.controls.className='map-controls geo-controls';this.host.append(this.controls);}
