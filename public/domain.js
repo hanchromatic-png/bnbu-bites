@@ -1,4 +1,16 @@
 // Shared, dependency-free data rules used by the browser and Node server.
+export function cleanPlaceName(value) {
+  return String(value ?? '').replace(/[\u200B-\u200D\uFEFF\uFFFD]/g,'').replace(/[\u0000-\u001F\u007F\s]+/g,' ').trim()
+    .replace(/^(Restaurant|Cafe|Fast food|Dining hall|Building|Campus place)\s*·\s*\d+$/,'$1');
+}
+export function cleanCatalogNames(input) {
+  const d=structuredClone(input);
+  for(const list of [d.buildings,d.canteens,d.stores,d.dishes])for(const item of list||[]){
+    for(const key of ['zh','en'])if(typeof item[key]==='string')item[key]=cleanPlaceName(item[key]);
+    if(/^OSM-\d+$/.test(item.code||''))item.code=item.zh||'Building';
+  }
+  return d;
+}
 export function normalizeData(input, defaults = []) {
   const d = structuredClone(input);
   if (d.schemaVersion === 2) return d;
@@ -38,7 +50,7 @@ export function removeEntity(d, type, id) {
 }
 export function localized(obj, lang, field='name') {
   const key=field==='name'?(lang==='en'?'en':'zh'):field+(lang==='en'?'En':'');
-  const value=obj?.[key];
+  const value=field==='name'?cleanPlaceName(obj?.[key]):obj?.[key];
   if(lang==='en'&&typeof value==='string'&&/[\u3400-\u9fff]/.test(value)) return '';
   return value || '';
 }
