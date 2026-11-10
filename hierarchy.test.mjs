@@ -89,3 +89,14 @@ test('geographic restaurant positions remain separate from schematic coordinates
  s.location={x:50,y:50,lng:113.514,lat:22.354,verified:true,note:'',noteEn:''};validateData(d);assert.deepEqual(locationOf(d,s).point,s.location);
  for(const bad of [{lng:181,lat:22},{lng:113,lat:90},{lng:'113',lat:22},{lng:113},{lng:null,lat:22}]){s.location={x:50,y:50,verified:true,...bad};assert.throws(()=>validateData(d),/location/);}
 });
+
+test('campus tile snapshots contain raw protobuf layers, not compressed HTTP payloads',()=>{
+ function fields(b){const rows=[];let i=0;const v=()=>{let n=0,s=0,x;do{x=b[i++];assert.ok(s<56&&i<=b.length);n+=(x&127)*2**s;s+=7;}while(x&128);return n;};while(i<b.length){const key=v(),wire=key&7;let value;if(wire===2){const size=v();value=b.subarray(i,i+size);i+=size;assert.ok(i<=b.length);}else if(wire===0)value=v();else if(wire===1)i+=8;else if(wire===5)i+=4;else assert.fail('Invalid protobuf wire type');rows.push([key>>3,value]);}return rows;}
+ const layerNames=new Set();
+ for(const x of [13357,13358])for(const y of [7147,7148]){
+  const d=JSON.parse(readFileSync(new URL(`./public/map-data/14-${x}-${y}.json`,import.meta.url)));
+  const bytes=Buffer.from(d.data,'base64');assert.notDeepEqual([...bytes.subarray(0,2)],[31,139]);
+  for(const [key,layer] of fields(bytes)){if(key===3){const name=fields(layer).find(([key])=>key===1)?.[1];assert.ok(name);layerNames.add(name.toString());}}
+ }
+ for(const expected of ['building','water','transportation'])assert.ok(layerNames.has(expected),expected);
+});
